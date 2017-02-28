@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  after_create :send_welcome_email
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -23,8 +25,16 @@ class User < ApplicationRecord
       user = User.new(user_params)
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.save
+      UserMailer.welcome(user).deliver_now
     end
 
     return user
   end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
 end
