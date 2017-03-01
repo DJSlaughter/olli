@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Movie.destroy_all
+Genre.destroy_all
+
+50.times do |index|
+  Movie.create!(name: Faker::Book.title)
+
+end
+
+50.times do |index|
+  Genre.create!(name: Faker::Book.genre)
+
+end
+
+
+
+
+p "Created #{Movie.count} movies"
+p "Created #{Genre.count} Genres"
