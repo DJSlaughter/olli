@@ -9,7 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 gem 'omniauth-facebook'
-
+gem "letter_opener", group: :development
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -19,7 +19,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
-gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'binding_of_caller'
