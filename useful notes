@@ -1,5 +1,6 @@
 
-list1 = List.new(name: ”Dans great list”, user:user1)
+list1 = List.new(name: ”Dans great list”, user_id: user1)
+list1 = List.new(name: ”Dans great list”, user_id: user1)
 
 
 ///notes create models terminal commands
