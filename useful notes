@@ -1,3 +1,7 @@
+
+list1 = List.new(name: ”Dans great list”, user:user1)
+
+
 ///notes create models terminal commands
 rails g model Movie name:string
 rails g model Genre name:string
