@@ -35,5 +35,6 @@ group :development, :test do
   gem 'poltergeist'
   gem 'launchy'
   gem 'minitest-reporters'
+  gem 'faker'
 
 end

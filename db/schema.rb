@@ -10,10 +10,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228125744) do
+ActiveRecord::Schema.define(version: 20170228164406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer  "movie_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_favourites_on_movie_id", using: :btree
+    t.index ["user_id"], name: "index_favourites_on_user_id", using: :btree
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_followers_on_user_id", using: :btree
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id", using: :btree
+  end
+
+  create_table "movie_genres", force: :cascade do |t|
+    t.integer  "movie_id"
+    t.integer  "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_movie_genres_on_genre_id", using: :btree
+    t.index ["movie_id"], name: "index_movie_genres_on_movie_id", using: :btree
+  end
+
+  create_table "movie_lists", force: :cascade do |t|
+    t.integer  "movie_id"
+    t.integer  "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_movie_lists_on_list_id", using: :btree
+    t.index ["movie_id"], name: "index_movie_lists_on_movie_id", using: :btree
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.text     "comments"
+    t.integer  "user_id"
+    t.integer  "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_suggestions_on_list_id", using: :btree
+    t.index ["user_id"], name: "index_suggestions_on_user_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "movie_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_tags_on_movie_id", using: :btree
+    t.index ["user_id"], name: "index_tags_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,4 +112,16 @@ ActiveRecord::Schema.define(version: 20170228125744) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "favourites", "movies"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "followers", "users"
+  add_foreign_key "lists", "users"
+  add_foreign_key "movie_genres", "genres"
+  add_foreign_key "movie_genres", "movies"
+  add_foreign_key "movie_lists", "lists"
+  add_foreign_key "movie_lists", "movies"
+  add_foreign_key "suggestions", "lists"
+  add_foreign_key "suggestions", "users"
+  add_foreign_key "tags", "movies"
+  add_foreign_key "tags", "users"
 end

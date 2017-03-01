@@ -1,0 +1,11 @@
+///notes create models terminal commands
+rails g model Movie name:string
+rails g model Genre name:string
+rails g model List user:references
+
+rails g model MovieGenre movie:references genre:references
+rails g model Tag name:string movie:references user:references
+rails g model Favourite movie:references user:references
+rails g model MovieList movie:references list:references
+rails g model Suggestion comments:text user:references list:references
+rails g model Follower user:references
