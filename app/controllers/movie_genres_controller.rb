@@ -1,2 +1,3 @@
-sclass MovieGenresController < ApplicationController
+class MovieGenresController < ApplicationController
+
 end
