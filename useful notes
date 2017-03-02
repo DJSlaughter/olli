@@ -14,3 +14,15 @@ rails g model Favourite movie:references user:references
 rails g model MovieList movie:references list:references
 rails g model Suggestion comments:text user:references list:references
 rails g model Follower user:references
+
+///rails c///
+
+u = User.first
+u.lists
+u.lists.create(name: "Ruis list")
+l = List.first
+MovieList.create(list_id: 1, movie_id: 48)
+l.movies
+
+* we create a connection between movie_id list_id on each create. Would have to use a .each to interate over and enter multiple movie_id's
+
