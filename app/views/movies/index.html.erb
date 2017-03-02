@@ -1,1 +1,8 @@
 <h1>You are in the INDEX of MOVIES</h1>
+
+<% @movies.each do |movie| %>
+  <h2><%= movie.name %></h2>
+  <%= link_to "show", movie_path(movie)%>
+
+
+<% end %>

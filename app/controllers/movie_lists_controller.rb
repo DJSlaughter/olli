@@ -5,7 +5,7 @@ class MovieListsController < ApplicationController
   end
 
   def show
-    @movie_list = MovieList.find(params[:id])
+    @movie_list = MovieList.find(params[:list_id])
     # @review = Review.new
   end
 
@@ -15,16 +15,12 @@ class MovieListsController < ApplicationController
   # end
 
   def new
-    @movie_list = MovieList.new
-    @movie = Movie.find(params[:gig_id])
+    @movie_list = MovieList.find(params[:list_id])
   end
 
   def create
-    @movie_list = MovieList.new(booking_params)
-    @movie_list.user = current_user
-
-    @movie = Movie.find(params[:gig_id])
-    @movie_list.movie = @movie
+    @movie_list = MovieList.find(params[:list_id])
+    @movie_list.list
 
     if @movie_list.save
       redirect_to movie_booking_path(@movie, @movie_list)   #:action => 'show'
