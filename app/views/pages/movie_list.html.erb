@@ -1,0 +1,11 @@
+<!-- James added this for testing. I got it from a to do list tutorial. So @movies might be named something else on our app -->
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-4 sortable">
+    <% if @movies.any? %>
+        <%= render @movies %>
+    <% else %>
+    <p>No movies found <%= link_to "Create Task", new_task_path %></p>
+    <% end %>
+  </div>
+</div>
