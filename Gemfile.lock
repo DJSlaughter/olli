@@ -88,6 +88,8 @@ GEM
       activesupport (>= 4.1.0)
     hashie (3.5.3)
     i18n (0.8.1)
+    imdb (0.8.1)
+      nokogiri (>= 1.6.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -240,6 +242,7 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass
+  imdb (~> 0.8)
   jbuilder (~> 2.0)
   jquery-rails
   launchy

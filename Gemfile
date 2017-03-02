@@ -36,5 +36,6 @@ group :development, :test do
   gem 'launchy'
   gem 'minitest-reporters'
   gem 'faker'
+  gem 'imdb', '~> 0.8'
 
 end
