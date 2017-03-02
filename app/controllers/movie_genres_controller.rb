@@ -1,0 +1,2 @@
+sclass MovieGenresController < ApplicationController
+end
