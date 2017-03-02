@@ -6,29 +6,52 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Movie.destroy_all
-Genre.destroy_all
-User.destroy_all
+#Movie.destroy_all
+#Genre.destroy_all
+#User.destroy_all
 
 
 
-10.times do |index|
-  User.create!(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: Faker::Internet.password(20), reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-12-31 22:27:09", last_sign_in_at: "2014-12-31 22:27:09", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1")
+Tmdb::Api.key("f042a824cd1b94336f3d940c86ccc873")
 
-end
+@movie = Tmdb::Search.movie('terminator', page: 2, language: 'it')
+byebug
+print @movie
+#Discover movies by different types of data like average rating, number of votes, genres and certifications. You can get a valid list of certifications from Tmdb::Certification.
+Tmdb::Discover.movie
 
-50.times do |index|
-  Movie.create!(name: Faker::Book.title)
+#Movie
+#The find movie method makes it easy to search for objects in our database by an external id.
+Tmdb::Find.movie('tt0266543', external_source: 'imdb_id')
 
-end
+#Get the list of movie genres.
+Tmdb::Genre.movie_list
 
-50.times do |index|
-  Genre.create!(name: Faker::Book.genre)
-
-end
-
+#Get the basic movie information for a specific movie id.
+Tmdb::Movie.detail(550)
 
 
-p "Created #{Movie.count} movies"
-p "Created #{Genre.count} Genres"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#require 'json'
+#require 'open-uri'
+
+#url = 'https://www.themoviedb.org/discover/movie?api_key=f042a824cd1b94336f3d940c86ccc873&primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22'
+#all_movies = open(url).read
+#user = JSON.parse(all_movies)
+
+#puts all_movies
