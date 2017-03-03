@@ -1,6 +1,6 @@
 class List < ApplicationRecord
   belongs_to :user
-  has_many :movie_lists, foreign_key: :list_id
+  has_many :movie_lists
   has_many :movies, through: :movie_lists
 
 
@@ -9,7 +9,7 @@ class List < ApplicationRecord
     if movie.nil?
       "http://placehold.it/30x30"
     else
-      movie.poster_url
+      movie.poster_path
     end
    end
 

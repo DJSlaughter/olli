@@ -1,18 +1,17 @@
-<h1>Create a list</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center margin50top">
+      <div class="form-card">
+        <h1>Create a list</h1>
+        <p>Put together a list that you can share with your friends.</p>
+          <%= simple_form_for [@list] do |f| %>
+            <%= f.input :name, label: 'What do you want to call your list?', placeholder: 'Top 5 Movies' %>
 
-<div class="form-card">
-<div class="col-md-6 col-sm-6 no-padding">
-  <%= simple_form_for [@list] do |f| %>
-    <%= f.input :name %>
-
+           <%= f.button :submit, "Create list", class:"btn btn-success btn-lg width50 text-center" %>
+          <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="col-md-6 col-sm-6 no-padding">
-
-
-  <div class="form-actions">
-   <%= f.button :submit, "create list", class:"btn btn-success btn-lg" %>
-   </div>
- </div>
- <% end %>
 

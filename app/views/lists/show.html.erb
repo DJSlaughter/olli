@@ -1,6 +1,9 @@
-<h1>List -- <%= @list.name  %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 margin50top">
 
-<h2> Movies </h2>
+    <h1><%= @list.name  %></h1>
+    <p>Please add your first movie to your new list <strong><%= @list.name %></strong>.</p>
 
 <% @list.movie_lists.each do |movie_list| %>
   <p><%= movie_list.movie.name %></p>
@@ -14,12 +17,16 @@
 <p>
 
 <%= simple_form_for @movie, method: "get", url:list_search_results_path(@list.id) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
+  <%= f.input :name, label: 'What movie?', placeholder: 'Terminator' %>
+  <%= f.button :submit, value: 'Add movie to list', class: 'btn btn-large btn-success' %>
 <% end %>
 
 
 </p>
 
+
+    </div>
+  </div>
+</div>
 
 
