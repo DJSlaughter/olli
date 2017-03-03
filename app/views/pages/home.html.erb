@@ -21,13 +21,15 @@
         <p><span>Your currated</span> movies list made by <span>friends</span></p>
       </div>
 
-
+      <!-- The next div must be inside of a list of movies lists -->
+      <% @lists.each do |list| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card">
-          <img src='assets/images/avatar.png' class="avatar-card-topleft"/>
 
+          <% avatar_url = list.user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar-card-topleft" %>
           <div class="card-title">
-            <p class="text-center">Top 5: horror</p>
+            <p class="text-center"><%= list.name %></p>
           </div>
 
           <div class="row">
@@ -36,11 +38,14 @@
 
 
               <div class="col-xs-6 movies-borders">
-                <img src='movie1.png' class="movie-poster"/>
+                <!--<img src='movie1.png' class="movie-poster"/>-->
+
+                <%= image_tag list.first_movie_url, class: "movie-poster" %>
               </div>
 
               <div class="col-xs-6 movies-borders">
                 <img src='assets/images/movie2.png' class="movie-poster"/>
+
               </div>
 
               <div class="col-xs-6 movies-borders">
@@ -52,9 +57,7 @@
 
 
 
-
-              <a href="" class="btn btn-lg button-hover">See more</a>
-
+              <%= link_to "See more", list_path(list.id), class: "btn btn-lg button-hover" %>
             </div>
           </div>
 
@@ -70,100 +73,10 @@
 
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <img src='assets/images/avatar.png' class="avatar-card-topleft"/>
-
-          <div class="card-title">
-            <p class="text-center">Top 5: horror</p>
-          </div>
-
-          <div class="row">
-            <div class="movies-card">
+      <% end %>
+      <!-- end of each -->
 
 
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie1.png' class="movie-poster"/>
-              </div>
-
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie2.png' class="movie-poster"/>
-              </div>
-
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie3.png' class="movie-poster"/>
-              </div>
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie4.png' class="movie-poster"/>
-              </div>
-
-
-
-
-              <a href="" class="btn btn-lg button-hover">See more</a>
-
-            </div>
-          </div>
-
-
-          <div class="card-fa centered">
-            <ul class="list-inline product-controls hidden-sm hidden-xs">
-              <li><a href=""><i class="fa fa-plus"></i></a></li>
-              <li><a href=""><i class="fa fa-share"></i></a></li>
-              <li><a href=""><i class="fa fa-star"></i></a></li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <img src='assets/images/avatar.png' class="avatar-card-topleft"/>
-
-          <div class="card-title">
-            <p class="text-center">Top 5: horror</p>
-          </div>
-
-          <div class="row">
-            <div class="movies-card">
-
-
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie1.png' class="movie-poster"/>
-              </div>
-
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie2.png' class="movie-poster"/>
-              </div>
-
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie3.png' class="movie-poster"/>
-              </div>
-              <div class="col-xs-6 movies-borders">
-                <img src='assets/images/movie4.png' class="movie-poster"/>
-              </div>
-
-
-
-
-              <a href="" class="btn btn-lg button-hover">See more</a>
-
-            </div>
-          </div>
-
-
-          <div class="card-fa centered">
-            <ul class="list-inline product-controls hidden-sm hidden-xs">
-              <li><a href=""><i class="fa fa-plus"></i></a></li>
-              <li><a href=""><i class="fa fa-share"></i></a></li>
-              <li><a href=""><i class="fa fa-star"></i></a></li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
 
 
       <!-- button -->
