@@ -2,11 +2,19 @@ class MovieListsController < ApplicationController
 
 
   def add_movie
-    new_movie = Movie.new(name: params[:title])
+    new_movie = Movie.new(name: params[:title], overview: params[:overview], release_date: params[:release_date], poster_url: params[:poster_url])
     new_movie.save
     new_movie_list = MovieList.new(list_id: params[:list_id], movie_id: new_movie.id)
     new_movie_list.save
     redirect_to list_path(params[:list_id])
+  end
+
+  def remove_movie
+       disposable_movie= MovieList.find(params[:id])
+       disposable_movie.destroy
+       redirect_to list_path(params[:list_id])
+
+
   end
   # def index
   #   @movie_lists = MovieList.all

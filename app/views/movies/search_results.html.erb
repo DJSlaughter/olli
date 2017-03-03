@@ -5,7 +5,7 @@
     <%= m.id %>
     <hr>
     <%= m.title %>
-    <%= link_to "Add this movie to #{@list.name}", list_add_movie_path(title: m.title) %>
+    <%= link_to "Add this movie to #{@list.name}", list_add_movie_path(title: m.title, release_date: m.releasedate, overview: m.overview, poster_url: "https://image.tmdb.org/t/p/w640/#{m.poster_path}") %>
     <hr>
     <%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}" %>
     <hr>

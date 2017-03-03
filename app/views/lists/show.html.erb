@@ -2,10 +2,13 @@
 
 <h2> Movies </h2>
 
-<% @list.movies.each do |movie| %>
-  <p><%= movie.name %></p>
-  <%= link_to "show", movie_path(movie)%>
-<% end %>
+<% @list.movie_lists.each do |movie_list| %>
+  <p><%= movie_list.movie.name %></p>
+  <p><%= movie_list.movie.release_date %></p>
+  <p><%= movie_list.movie.overview %></p>
+  <p><%= image_tag movie_list.movie.poster_url %></p>
+  <p><%= link_to "Remove movie", list_remove_movie_path(list_id: @list.id, id: movie_list.id),  method: :delete %></p>
+  <% end %>
 
 
 <p>
@@ -17,5 +20,6 @@
 
 
 </p>
+
 
 
