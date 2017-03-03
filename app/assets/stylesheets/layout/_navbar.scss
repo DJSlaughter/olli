@@ -21,7 +21,7 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 100px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -48,26 +48,11 @@
   text-decoration: none;
 }
 
-/* Navbar right button */
-.navbar-wagon-button {
-  margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid #D23333;
-}
-.navbar-wagon-button:hover {
-  color: white;
-  background: #D23333;
-  border-color: #ac2626;
-}
+
 
 /* Navbar search form */
 .navbar-wagon-search {
-  flex: 0 1 300px;
+  flex: 0 1 400px;
   display: flex;
   justify-content: flex-end;
   padding: 0 10px;
@@ -91,13 +76,15 @@
   color: #666666;
   border: 1px solid #E6E6E6;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 0 200px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
   border: 1px solid #CCCCCC;
 }
+
+
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
@@ -129,3 +116,58 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
+.badge-container {
+  position: relative;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  color: grey;
+}
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+.badge-red {
+  background: #EE5F5B;
+}
+.badge-green {
+  background: #32B796;
+}
+.badge-blue {
+  background: #469AE0;
+}
+.badge-black {
+  background: black;
+}
+.badge-bordered {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+
+.navbar-button{
+ background-color: #00a894;
+ border: none;
+ color: white;
+ padding: 10px 20px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ border-radius: 4px;
+ margin: 20px;
+}
+
