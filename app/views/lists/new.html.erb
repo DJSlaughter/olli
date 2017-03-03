@@ -1,2 +1,19 @@
 <h1>You are in the NEW of LISTS</h1>
+<h1>Create a list</h1>
+
+<div class="form-card">
+<div class="col-md-6 col-sm-6 no-padding">
+  <%= simple_form_for [@list] do |f| %>
+    <%= f.input :name %>
+
+  </div>
+
+  <div class="col-md-6 col-sm-6 no-padding">
+
+
+  <div class="form-actions">
+   <%= f.button :submit, "create list", class:"btn btn-success btn-lg" %>
+   </div>
+ </div>
+ <% end %>
 
