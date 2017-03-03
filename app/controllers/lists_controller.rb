@@ -18,8 +18,8 @@ class ListsController < ApplicationController
     @list.user = current_user
     @list.name = params[:name]
 
-    movies = Movie.find_all_by_id(params[:movie_id])
-    @list.movies << movies
+    # movies = Movie.find_all_by_id(params[:movie_id])
+    # @list.movies << movies
 
     if @list.save
       redirect_to list_path(@list)
