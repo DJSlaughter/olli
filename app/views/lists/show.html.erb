@@ -1,2 +1,21 @@
-<h1>You are in the SHOW of <%= @list.name  %> -- LIST</h1>
+<h1>List -- <%= @list.name  %></h1>
+
+<h2> Movies </h2>
+
+<% @list.movies.each do |movie| %>
+  <p><%= movie.name %></p>
+  <%= link_to "show", movie_path(movie)%>
+<% end %>
+
+
+<p>
+
+<%= simple_form_for @movie, method: "get", url:list_search_results_path(@list.id) do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit %>
+<% end %>
+
+
+</p>
+
 

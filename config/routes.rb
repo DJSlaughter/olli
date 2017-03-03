@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     resources :movies, only: [:new, :create]
     get '/search', to: 'movies#search'
     get '/search_results', to: 'movies#search_results'
-    
+
     resources :movies_lists
-  
+    get '/add_movie', to: 'movie_lists#add_movie'
+
   end
 
   resources :movies, only: [:show, :index, :new, :create]

@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-
+  before_action :find_list
   def index
     @movies = Movie.all
   end
@@ -23,7 +23,6 @@ class MoviesController < ApplicationController
   end
 
   def search
-    @list = find_list
     @movie = Movie.new
   end
 

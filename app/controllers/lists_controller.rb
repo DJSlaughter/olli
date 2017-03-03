@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @movie = Movie.new
   end
 
   def new
@@ -16,13 +17,13 @@ class ListsController < ApplicationController
     # @list = List.new(params[:something])
     @list = List.new
     @list.user = current_user
-    @list.name = params[:name]
+    @list.name = params[:list][:name]
 
-    movies = Movie.find_all_by_id(params[:movie_id])
-    @list.movies << movies
+    # movies = Movie.find_all_by_id(params[:movie_id])
+    # @list.movies << movies
 
     if @list.save
-      redirect_to list_path(@list)
+      redirect_to @list
     else
       render :new
     end
