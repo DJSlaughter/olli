@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :movies, only: [:new, :create]
+    get '/search', to: 'movies#search'
+    get '/search_results', to: 'movies#search_results'
   end
 
   resources :movies_lists

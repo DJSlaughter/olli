@@ -1,0 +1,7 @@
+<% poster = "https://image.tmdb.org/t/p/w640/" %>
+<% @movies.each do |m| %>
+<%= m.title %>
+<hr>
+<%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}" %>
+<hr>
+<% end %>
