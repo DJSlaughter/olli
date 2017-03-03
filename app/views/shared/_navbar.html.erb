@@ -1,22 +1,39 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <div class="col-sm-3">
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "LOGOBIGOLLI.png" %>
   <% end %>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
+    <form action="" class="navbar-wagon-search col-sm-6">
+        <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+        <button type="submit" class="navbar-wagon-search-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
+
+ <select class="form-control navbar-wagon-search col-sm-3">
+        <option>Genre</option>
+        <option>Mood</option>
+        <option>Friend</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+
+
+ <%= link_to t(".top_call_to_action", default: "Search"), "#", class: "navbar-wagon-item navbar-button btn" %>
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
+
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
@@ -59,7 +76,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -74,4 +91,7 @@
     </div>
   </div>
 </div>
+
+
+
 
