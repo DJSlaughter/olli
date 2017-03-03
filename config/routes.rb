@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :lists do
+
+    resources :movies, only: [:new, :create]
+    get '/search', to: 'movies#search'
+    get '/search_results', to: 'movies#search_results'
+    
     resources :movies_lists
+  
   end
 
   resources :movies, only: [:show, :index, :new, :create]
