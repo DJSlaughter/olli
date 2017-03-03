@@ -1,0 +1,4 @@
+<%= simple_form_for @movie, method: "get", url:list_search_results_path do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit %>
+<% end %>

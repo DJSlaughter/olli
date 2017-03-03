@@ -22,6 +22,17 @@ class MoviesController < ApplicationController
 
   end
 
+  def search
+    @list = find_list
+    @movie = Movie.new
+  end
+
+  def search_results
+    @movie = params[:movie][:name]
+    @results = Tmdb::Search.movie(@movie)
+    @movies = @results.results
+  end
+
 
   private
 
