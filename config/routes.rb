@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     get '/search', to: 'movies#search'
     get '/search_results', to: 'movies#search_results'
 
-    resources :movies_lists
+
     get '/add_movie', to: 'movie_lists#add_movie'
+    delete '/remove_movie', to: 'movie_lists#remove_movie'
 
   end
 
