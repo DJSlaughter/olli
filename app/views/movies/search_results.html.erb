@@ -1,7 +1,15 @@
-<% poster = "https://image.tmdb.org/t/p/w640/" %>
-<% @movies.each do |m| %>
-<%= m.title %>
-<hr>
-<%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}" %>
-<hr>
-<% end %>
+<div class="container">
+<div class="row">
+  <% @movies.each do |m| %>
+  <div class="col-xs-12">
+    <%= m.id %>
+    <hr>
+    <%= m.title %>
+    <%= link_to "Add this movie to #{@list.name}", list_add_movie_path(title: m.title) %>
+    <hr>
+    <%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}" %>
+    <hr>
+  </div>
+  <% end %>
+</div>
+</div>
