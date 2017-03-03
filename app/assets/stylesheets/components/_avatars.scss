@@ -1,20 +1,45 @@
-.avatar {
-  width: 30px;
-  border-radius: 50%;
-}
-.avatar-large {
-  width: 50px;
-  border-radius: 50%;
-}
+
+
+/* line 9, /Users/seb/code/lewagon/ui-components/source/stylesheets/components/_avatar.scss */
 .avatar-bordered {
-  width: 30px;
+  width: 100px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+  border: lightgray 1px solid;
+  margin: 20px;
+
 }
-.avatar-square {
-  width: 30px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+
+
+.avatar-bordered:hover {
+  width: 100px;
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  -moz-box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  border: lightgray 1px solid;
+  margin: 20px;
+
 }
+
+
+.avatar-card-topleft {
+  position: absolute;
+  width: 60px;
+  border-radius: 50%;
+  border: lightgray 1px solid;
+  top: -10px;
+  left: -10px;
+}
+
+.avatar-card-topleft:hover {
+  position: absolute;
+  width: 60px;
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  -moz-box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  border: lightgray 1px solid;
+  top: -10px;
+  left: -10px;
+}
+
