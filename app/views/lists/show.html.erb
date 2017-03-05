@@ -3,14 +3,14 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 margin50top">
 
     <h1><%= @list.name  %></h1>
-    <p>Please add your first movie to your new list <strong><%= @list.name %></strong>.</p>
+    <p>Please add a movie to your <strong><%= @list.name %></strong> list.</p>
 
 <% @list.movie_lists.each do |movie_list| %>
-  <p><%= movie_list.movie.name %></p>
+  <p><strong><%= movie_list.movie.name %></strong></p>
   <p><%= movie_list.movie.release_date %></p>
   <p><%= movie_list.movie.overview %></p>
   <p><%= image_tag movie_list.movie.poster_url %></p>
-  <p><%= link_to "Remove movie", list_remove_movie_path(list_id: @list.id, id: movie_list.id),  method: :delete %></p>
+  <p><%= button_to "Remove movie", list_remove_movie_path(list_id: @list.id, id: movie_list.id),  method: :delete, class:"btn btn-success btn-lg width50 text-center"%></p>
   <% end %>
 
 
