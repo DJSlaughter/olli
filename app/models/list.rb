@@ -9,7 +9,7 @@ class List < ApplicationRecord
     if movie.nil?
       "http://placehold.it/30x30"
     else
-      movie.poster_path
+      movie.poster_url
     end
    end
 
