@@ -1,3 +1,4 @@
+
 <% if !@search_result.nil? %>
     <div class="row">
       <% @search_result.each do |res| %>
@@ -5,3 +6,149 @@
       <% end %>
     </div>
   <% end %>
+
+<div class="row">
+
+
+  <div class="container">
+    <div class="row">
+
+
+      <section class="readme-section" id="avatar">
+       <div class="text-center product-header">
+        <p><span>Currated</span> movies listed by friends</p>
+      </div>
+
+      <!-- The next div must be inside of a list of movies lists -->
+      <% @lists.each do |list| %>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card">
+
+          <% avatar_url = list.user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar-card-topleft" %>
+
+          <div class="row">
+             <div class="movies-card">
+            <% list.movies.limit(4).each do|movie| %>
+
+
+              <div class="col-xs-6 movies-borders">
+                <!--<img src='movie1.png' class="movie-poster"/>-->
+                <%= image_tag movie.poster_url, class: "movie-poster" %>
+              </div>
+          <% end %>
+           </div>
+<div class="card-title">
+            <p class="text-center"><%= list.name %></p>
+          </div>
+              <%= link_to "See more", list_path(list.id), class: "btn btn-lg button-hover" %>
+
+          </div>
+
+
+          <div class="card-fa centered">
+            <ul class="list-inline product-controls hidden-sm hidden-xs">
+              <li><a href=""><i class="fa fa-plus"></i></a></li>
+              <li><a href=""><i class="fa fa-share"></i></a></li>
+              <li><a href=""><i class="fa fa-star"></i></a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+      <% end %>
+      <!-- end of each -->
+
+
+
+
+      <!-- button -->
+
+
+      <p> <%= link_to "Create your own List", new_list_path, class:"navbar-wagon-item navbar-button btn" %>
+      </p>
+    </div>
+
+
+    <!-- endd of button -->
+
+    <!--  Personal recommendations sent by friends  -->
+
+
+    <div class="container">
+      <div class="row">
+
+
+
+
+
+
+          <div class="text-center product-header">
+            <p><span>Movies</span> recommended by <span> your friends</span></p>
+          </div>
+
+ <div class="product">
+          <div class="product-unique">
+            <div class="row">
+
+             <div class="col-sm-2">
+              <img src='assets/images/avatar.png'' class="avatar-bordered"/>
+            </div>
+            <div class='col-sm-8 product-body'>
+              <div class="product-inline ">
+                <p><span>Dans</span> is recommending you <span>this movie</span></p>
+              </div>
+              <h3>
+               <a class="tags">tag1</a>
+               <a class="tags">tag2</a>
+               <a class="tags">tag2</a>
+               <a class="tags">tag3</a>
+               <a class="tags">tag3</a>
+             </h3>
+           </div>
+           <div class="col-sm-2">
+             <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
+              <li><a href=""><i class="fa fa-heart"></i></a></li>
+              <li><a href=""><i class="fa fa-share"></i></a></li>
+              <li><a href=""><i class="fa fa-star"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- second recomendation -->
+      <div class="product-unique">
+        <div class="row">
+         <div class="col-sm-2">
+          <img src='assets/images/avatar.png'' class="avatar-bordered"/>
+        </div>
+
+        <div class='col-sm-8 product-body'>
+
+          <div class="product-inline ">
+            <p><span>Dans</span> is recommending you <span>this movie</span></hp>
+            </div>
+
+
+            <h3>
+             <a class="tags">tag1</a>
+             <a class="tags">tag2</a>
+             <a class="tags">tag2</a>
+             <a class="tags">tag3</a>
+             <a class="tags">tag3</a>
+           </h3>
+
+         </div>
+
+         <div class="col-sm-2">
+           <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
+            <li><a href=""><i class="fa fa-heart"></i></a></li>
+            <li><a href=""><i class="fa fa-share"></i></a></li>
+            <li><a href=""><i class="fa fa-star"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
