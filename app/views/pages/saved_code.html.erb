@@ -1,13 +1,4 @@
 
-<% if !@search_result.nil? %>
-    <div class="row">
-      <% @search_result.each do |res| %>
-        <p><%=res.title%></p>
-      <% end %>
-    </div>
-  <% end %>
-
-
 <div class="row">
 
 
@@ -69,7 +60,6 @@
 
       <p> <%= link_to "Create your own List", new_list_path, class:"navbar-wagon-item navbar-button btn" %>
       </p>
-        
     </div>
 
 
@@ -80,6 +70,11 @@
 
     <div class="container">
       <div class="row">
+
+
+
+
+
 
           <div class="text-center product-header">
             <p><span>Movies</span> recommended by <span> your friends</span></p>
@@ -123,7 +118,7 @@
         <div class='col-sm-8 product-body'>
 
           <div class="product-inline ">
-            <p><span>Dans</span> is recommending you <span>this movie</span></p>
+            <p><span>Dans</span> is recommending you <span>this movie</span></hp>
             </div>
 
 
@@ -145,6 +140,8 @@
           </ul>
         </div>
       </div>
+</div>
 
-    </div>
-  </div>
+
+
+
