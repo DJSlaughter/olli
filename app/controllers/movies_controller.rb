@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :find_list
+  # before_action :find_list
   def index
     @movies = Movie.all
   end
