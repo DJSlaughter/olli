@@ -32,6 +32,9 @@ class MoviesController < ApplicationController
     @movies = @results.results
   end
 
+  def generic_search
+    print(params)
+  end
 
   private
 
