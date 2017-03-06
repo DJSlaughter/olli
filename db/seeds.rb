@@ -18,17 +18,17 @@ Tmdb::Api.key("f042a824cd1b94336f3d940c86ccc873")
 
 print @movie
 #Discover movies by different types of data like average rating, number of votes, genres and certifications. You can get a valid list of certifications from Tmdb::Certification.
-Tmdb::Discover.movie
+#Tmdb::Discover.movie
 
 #Movie
 #The find movie method makes it easy to search for objects in our database by an external id.
-Tmdb::Find.movie('tt0266543', external_source: 'imdb_id')
+#Tmdb::Find.movie('tt0266543', external_source: 'imdb_id')
 
 #Get the list of movie genres.
-Tmdb::Genre.movie_list
+#Tmdb::Genre.movie_list
 
 #Get the basic movie information for a specific movie id.
-Tmdb::Movie.detail(550)
+#Tmdb::Movie.detail(550)
 
 
 

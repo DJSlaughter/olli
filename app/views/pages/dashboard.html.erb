@@ -1,0 +1,7 @@
+<% if !@search_result.nil? %>
+    <div class="row">
+      <% @search_result.each do |res| %>
+        <p><%=res.title%></p>
+      <% end %>
+    </div>
+  <% end %>
