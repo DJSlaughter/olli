@@ -1,9 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 margin50top">
-
+    <!-- need to add a button to give the list a name IN CASE OF IT BEING EMPTY -->
     <h1><%= @list.name  %></h1>
     <p>Please add a movie to your <strong><%= @list.name %></strong> list.</p>
+    <% if @list.name.empty? %>
+    <p><%= link_to "Give your list a name", new_list_path, class: 'btn btn-large btn-success' %></p>
+    <% end %>
+
 
 <% @list.movie_lists.each do |movie_list| %>
   <p><strong><%= movie_list.movie.name %></strong></p>

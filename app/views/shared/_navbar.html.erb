@@ -10,8 +10,8 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search col-sm-6">
-        <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+    <form action=<%= dashboard_url %> method="get" class="navbar-wagon-search col-sm-6">
+        <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search something">
         <button type="submit" class="navbar-wagon-search-btn">
           <i class="fa fa-search"></i>
         </button>
@@ -26,9 +26,6 @@
         <option>5</option>
       </select>
 
-
-
- <%= link_to t(".top_call_to_action", default: "Search"), "#", class: "navbar-wagon-item navbar-button btn" %>
 
 
     <!-- Different navigation if login or not -->
