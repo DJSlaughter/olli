@@ -4,7 +4,7 @@
   <% @lists.each do |list| %>
     <li data-list-id="<%= list.id %>">
       <%= list.user_id %>
-      <%= link_to "show", list_path(list)%>
+      <%= link_to "show", edit_list_path(list)%>
       <%= link_to "Delete", list, method: :delete, remote: true %>
     </li>
   <% end %>
