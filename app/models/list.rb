@@ -13,4 +13,22 @@ class List < ApplicationRecord
     end
    end
 
+   def self.has_movies?(arr_names)
+    @all_lists = List.all
+    @all_lists_movies = []
+    @movies_in_db = []
+
+    @all_lists.each do |list|
+
+      list.movies.each do |list_m|
+        @all_lists_movies << list_m.name
+      end
+
+    end
+
+    arr_names.each {|m_name| @movies_in_db << Movie.find_by_name(m_name) if @all_lists_movies.include?(m_name) }
+    return @movies_in_db
+   end
+
 end
+
