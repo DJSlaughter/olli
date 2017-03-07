@@ -1,3 +1,8 @@
+///pushing to heroku
+git remote -v
+git push heroku master
+heroku runs rails db:migrate
+heroku open
 
 list1 = List.new(name: ”Dans great list”, user_id: user1)
 list1 = List.new(name: ”Dans great list”, user_id: user1)
