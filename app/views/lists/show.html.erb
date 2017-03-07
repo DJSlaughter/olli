@@ -13,8 +13,15 @@
   <p><strong><%= movie_list.movie.name %></strong></p>
   <p><%= movie_list.movie.release_date %></p>
   <p><%= movie_list.movie.overview %></p>
-  <p><%= image_tag movie_list.movie.poster_url %></p>
-  <p><%= button_to "Remove movie", list_remove_movie_path(list_id: @list.id, id: movie_list.id),  method: :delete, class:"btn btn-success btn-lg width50 text-center"%></p>
+  <p>
+    <%= link_to movie_url(movie_list.movie.id, only_path: false) do %>
+      <%= image_tag movie_list.movie.poster_url %>
+    <% end %>
+  </p>
+  <p><%= button_to "Remove movie", list_remove_movie_path(list_id: @list.id, id: movie_list.id),  method: :delete, class:"btn btn-success btn-lg width50 text-center"%>
+    <%= render 'shared/facebook_btn', movie: movie_list.movie %>
+
+  </p>
   <% end %>
 
 
@@ -22,7 +29,7 @@
 
 <%= simple_form_for @movie, method: "get", url:list_search_results_path(@list.id) do |f| %>
   <%= f.input :name, label: 'What movie?', placeholder: 'Terminator' %>
-  <%= f.button :submit, value: 'Add movie to list', class: 'btn btn-large btn-success' %>
+  <%= f.button :submit, value: 'Search', class: 'btn btn-large btn-success' %>
 <% end %>
 
 
