@@ -1,5 +1,36 @@
 <!-- banner starting here -->
 
+
+
+<div class="banner" style="background: linear-gradient(-140deg, rgba(2,101,131,-0.4) 0%, rgba(47,34,40,9.6) 89%), url(<%= image_path 'background.jpg'%>); background-position: bottom">
+
+
+
+<!-- banner sentence -->
+
+<div class="row">
+<div class="banner-header">
+  <p><span>Currated</span> movies from your <span> close friends</span></p>
+</div>
+</div>
+
+     <!-- Search form -->
+     <div class="row">
+<div class="banner-content">
+<div class="col-sm-2">
+
+
+</div>
+
+
+    <form action=<%= dashboard_url %> method="get" class="navbar-wagon-search col-sm-4">
+        <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search something">
+        <button type="submit" class="navbar-wagon-search-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
+
  <select class="banner-form form-control col-sm-2 input-lg">
         <option>Title</option>
         <option>Genre</option>
@@ -159,6 +190,3 @@
 </div>
 </div>
 </div>
-
-
-
