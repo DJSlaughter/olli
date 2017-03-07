@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-
+  @lists = List.all
     search_value = params[:search_value]
     if !search_value.nil?
       #@search_result = Tmdb::Genre.movie_list
