@@ -53,7 +53,7 @@
 
 /* Navbar search form */
 .navbar-wagon-search {
-  flex: 0 1 400px;
+  flex: 0 1 200px;
   display: flex;
   justify-content: flex-end;
   padding: 0 10px;
@@ -77,14 +77,13 @@
   color: #666666;
   border: 1px solid #E6E6E6;
   border-radius: 5px;
-  padding: 0 200px;
+  padding: 0 100px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
   border: 1px solid #CCCCCC;
 }
-
 
 
 /* Navbar dropdown menu */
