@@ -31,6 +31,7 @@ class MoviesController < ApplicationController
     @movie = params[:movie][:name]
     @results = Tmdb::Search.movie(@movie)
     @movies = @results.results
+    @list = find_list
   end
 
   def generic_search
