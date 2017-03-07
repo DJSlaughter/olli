@@ -16,7 +16,8 @@ Tmdb::Api.key("f042a824cd1b94336f3d940c86ccc873")
 
 @movie = Tmdb::Genre.movies(18)
 
-print @movie
+
+
 #Discover movies by different types of data like average rating, number of votes, genres and certifications. You can get a valid list of certifications from Tmdb::Certification.
 #Tmdb::Discover.movie
 

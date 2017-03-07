@@ -1,68 +1,49 @@
-<div class="tabs">
-  <a class="tab active" href="#">
-    <h3></h3>
-    <p>Dashboard</p>
-  </a>
-  <a class="tab" href="#">
-    <h3></h3>
-    <p>My Lists</p>
-  </a>
-  <a class="tab" href="#">
-    <h3></h3>
-    <p>My Network</p>
-  </a>
-  <a class="tab" href="#">
-    <h3></h3>
-    <p>Submitted</p>
-  </a>
-</div>
 
-
-
-<% if !@search_result.nil? %>
+<% if !@movies_out.nil? %>
     <div class="row">
-      <% @search_result.each do |res| %>
-        <p><%=res.title%></p>
+      <% @movies_out.each do |m| %>
+          <%= link_to movie_path(m) do %>
+            <p><%= m.name %></p>
+          <% end %>
+        <p><%= m.overview %></p>
+        <p><%= image_tag m.poster_url %></p>
       <% end %>
     </div>
   <% end %>
 
-
-<div class="row">
-
-
-  <div class="container">
-    <div class="row">
+  <div class="row">
+    <div class="container">
+      <div class="row">
 
 
-      <section class="readme-section" id="avatar">
-       <div class="text-center product-header">
-        <p><span>Currated</span> movies listed by friends</p>
-      </div>
+        <section class="readme-section" id="avatar">
+         <div class="text-center product-header">
+          <p><span>Currated</span> movies listed by friends</p>
+        </div>
 
-      <!-- The next div must be inside of a list of movies lists -->
-      <% @lists.each do |list| %>
-      <div class="col-xs-12 col-sm-3">
-        <div class="card">
+        <!-- The next div must be inside of a list of movies lists -->
+        <% @lists.each do |list| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="card">
 
-          <% avatar_url = list.user.facebook_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "avatar-card-topleft" %>
+            <% avatar_url = list.user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <%= image_tag avatar_url, class: "avatar-card-topleft" %>
 
-          <div class="row">
+            <div class="row">
              <div class="movies-card">
-            <% list.movies.limit(4).each do|movie| %>
+              <% list.movies.limit(4).each do|movie| %>
 
 
               <div class="col-xs-6 movies-borders">
                 <!--<img src='movie1.png' class="movie-poster"/>-->
                 <%= image_tag movie.poster_url, class: "movie-poster" %>
               </div>
-          <% end %>
-           </div>
-<div class="card-title">
-            <p class="text-center"><%= list.name %></p>
-          </div>
-              <%= link_to "See more", list_path(list.id), class: "btn btn-lg button-hover" %>
+              <% end %>
+            </div>
+            <div class="card-title">
+              <p class="text-center"><%= list.name %></p>
+            </div>
+            <%= link_to "See more", list_path(list.id), class: "btn btn-lg button-hover" %>
 
           </div>
 
@@ -101,11 +82,11 @@
     <div class="container">
       <div class="row">
 
-          <div class="text-center product-header">
-            <p><span>Movies</span> recommended by <span> your friends</span></p>
-          </div>
+        <div class="text-center product-header">
+          <p><span>Movies</span> recommended by <span> your friends</span></p>
+        </div>
 
- <div class="product">
+        <div class="product">
           <div class="product-unique">
             <div class="row">
 
@@ -144,27 +125,31 @@
 
           <div class="product-inline ">
             <p><span>Dans</span> is recommending you <span>this movie</span></p>
-            </div>
+          </div>
 
 
-            <h3>
-             <a class="tags">tag1</a>
-             <a class="tags">tag2</a>
-             <a class="tags">tag2</a>
-             <a class="tags">tag3</a>
-             <a class="tags">tag3</a>
-           </h3>
+          <h3>
+           <a class="tags">tag1</a>
+           <a class="tags">tag2</a>
+           <a class="tags">tag2</a>
+           <a class="tags">tag3</a>
+           <a class="tags">tag3</a>
+         </h3>
 
-         </div>
+       </div>
 
-         <div class="col-sm-2">
-           <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
-            <li><a href=""><i class="fa fa-heart"></i></a></li>
-            <li><a href=""><i class="fa fa-share"></i></a></li>
-            <li><a href=""><i class="fa fa-star"></i></a></li>
-          </ul>
-        </div>
+       <div class="col-sm-2">
+         <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
+          <li><a href=""><i class="fa fa-heart"></i></a></li>
+          <li><a href=""><i class="fa fa-share"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul>
       </div>
-
     </div>
+
   </div>
+  </div>
+  </div>
+  </div>
+
+

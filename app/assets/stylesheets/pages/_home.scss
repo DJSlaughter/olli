@@ -5,9 +5,13 @@
   height: 69vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
-  display: flex;
+  background-position: bottom;
   align-items: center;
-  justify-content: center;
+  padding-top: 120px;
+  padding-left: 75px;
+  padding-right: 75px;
+
+
 }
 .banner h1 {
   font-size: 50px;
@@ -21,10 +25,53 @@
   margin-bottom: 20px;
 }
 
+
+.banner-header {
+  margin: 30px 50px;
+}
+
+.banner-header p {
+  color: white;
+  margin-bottom: 0;
+  font-weight: 900;
+  font-size: 40px;
+  margin-top: 0;
+  padding-top: 5px;
+
+}
+.banner-header span {
+  color: #00a894 ;
+  margin-bottom: 0;
+  font-weight: 900;
+  font-size: 40px;
+  margin-top: 0;
+  padding-top: 5px;
+
+}
+
+
+.button-banner {
+  background-color: #00a894;
+  color: white;
+  color: white;
+  padding: 10px 50px;
+  margin: 0 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.button-banner:hover{
+  opacity: 1;
+  background: #00a894;
+  text-decoration: none;
+  color: white;
+}
+
 .button-home {
   background-color: #00a894;
   color: white;
- color: white;
+  color: white;
   padding: 10px 200px;
   border-radius: 4px;
   font-weight: bold;
@@ -36,5 +83,48 @@
   background: #00a894;
   text-decoration: none;
   color: white;
+}
+
+.banner-content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 100px;
+  margin-left: 300px;
+  margin-right: 200px;
+}
+
+.banner-form {
+height: 40px !important;
+
+}
+
+
+.banner-formcontrol {
+
+
+
+}
+
+
+.avatar-home{
+  width: 100px;
+  border-radius: 50%;
+  border: lightgray 1px solid;
+  margin: 20px;
+
+}
+
+
+.avatar-hover:hover {
+  width: 100px;
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  -moz-box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  box-shadow: -1px 2px 24px 8px rgba(0,0,0,0.2);
+  border: lightgray 1px solid;
+  margin: 20px;
+
 }
 

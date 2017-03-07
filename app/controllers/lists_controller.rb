@@ -56,4 +56,6 @@ class ListsController < ApplicationController
     redirect_to current_user.lists
   end
 
+
+
 end

@@ -1,0 +1,80 @@
+=> [[32m#<Movie:0x838c9168[0m
+  id: [1;34m1[0m,
+  name: [31m[1;31m"[0m[31mAlien[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m03[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m19[0m:[1;34m04[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m03[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m19[0m:[1;34m04[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mDuring its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//2h00HrZs89SL3tXB4nbkiM7BKHs.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c908c[0m
+  id: [1;34m2[0m,
+  name: [31m[1;31m"[0m[31mPrometheus[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m03[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m19[0m:[1;34m05[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m03[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m19[0m:[1;34m05[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mA team of explorers discover a clue to the origins of mankind on Earth, leading them on a journey to the darkest corners of the universe. There, they must fight a terrifying battle to save the future of the human race.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//sRbTWQn9Djs0wW8k3nkUun5ZBnt.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c8f4c[0m
+  id: [1;34m3[0m,
+  name: [31m[1;31m"[0m[31mGladiator[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mSun[0m, [1;34m05[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m14[0m:[1;34m05[0m:[1;34m31[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mSun[0m, [1;34m05[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m14[0m:[1;34m05[0m:[1;34m31[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mGeneral Maximus' success in battle earns the favour of the Roman Empire's elderly Emperor at the expense of the Emperor's son. In a fit of jealous rage the son slays his father before turning his anger towards Maximus. Now reduced to a slave, and his family dead, Maximus must fight as a gladiator to gain his freedom – and his revenge.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//6WBIzCgmDCYrqh64yDREGeDk9d3.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c8c40[0m
+  id: [1;34m4[0m,
+  name: [31m[1;31m"[0m[31mPulp Fiction[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mSun[0m, [1;34m05[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m16[0m:[1;34m01[0m:[1;34m05[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mSun[0m, [1;34m05[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m16[0m:[1;34m01[0m:[1;34m05[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mA burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//dM2w364MScsjFf8pfMbaWUcWrR.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c8ba0[0m
+  id: [1;34m5[0m,
+  name: [31m[1;31m"[0m[31mThe Roadhouse Murder[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mMon[0m, [1;34m06[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m11[0m:[1;34m26[0m:[1;34m20[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m06[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m11[0m:[1;34m26[0m:[1;34m20[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mAfter he stumbles across a murder, a young reporter devises an elaborate scene to keep his newspaper stories about the crime front-page news. Eric Linden, Dorothy Jordan, Bruce Cabot, Roscoe Ates, Roscoe Karns and Purnell Pratt star in this 1932 thriller, directed by J. Walter Ruben.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//3AEV5PQuxAte9ZZ4APCOqkRyq2e.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c8b00[0m
+  id: [1;34m6[0m,
+  name: [31m[1;31m"[0m[31mSomething Borrowed[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mMon[0m, [1;34m06[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m11[0m:[1;34m27[0m:[1;34m38[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m06[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m11[0m:[1;34m27[0m:[1;34m38[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mThough Rachel (Ginnifer Goodwin) is a successful attorney and a loyal, generous friend, she is still single. After one drink too many at her 30th-birthday celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex -- who happens to be engaged to her best friend, Darcy (Kate Hudson). Ramifications of the liaison threaten to destroy the women's lifelong friendship, while Ethan (John Krasinski), Rachel's confidant, harbors a potentially explosive secret of his own.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//jTnwJQLGIBYCe5o08Mtd2zsyzfm.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c8a60[0m
+  id: [1;34m7[0m,
+  name: [31m[1;31m"[0m[31mTerminator Genisys[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m07[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m14[0m:[1;34m17[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m07[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m14[0m:[1;34m17[0m:[1;34m32[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mThe year is 2029. John Connor, leader of the resistance continues the war against the machines. At the Los Angeles offensive, John's fears of the unknown future begin to emerge when TECOM spies reveal a new plot by SkyNet that will attack him from both fronts; past and future, and will ultimately change warfare forever.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//5JU9ytZJyR3zmClGmVm9q4Geqbd.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m,
+ [32m#<Movie:0x838c8984[0m
+  id: [1;34m8[0m,
+  name: [31m[1;31m"[0m[31mAlien[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m07[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m14[0m:[1;34m18[0m:[1;34m02[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m07[0m [1;34;4mMar[0m [1;34m2017[0m [1;34m14[0m:[1;34m18[0m:[1;34m02[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  release_date: [1;36mnil[0m,
+  overview:
+   [31m[1;31m"[0m[31mDuring its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.[1;31m"[0m[31m[0m,
+  poster_url: [31m[1;31m"[0m[31mhttps://image.tmdb.org/t/p/w640//2h00HrZs89SL3tXB4nbkiM7BKHs.jpg[1;31m"[0m[31m[0m,
+  vote_average: [1;36mnil[0m[32m>[0m]
