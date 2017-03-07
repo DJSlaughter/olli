@@ -27,6 +27,7 @@ class MoviesController < ApplicationController
   end
 
   def search_results
+    @list = List.find(params[:list_id])
     @movie = params[:movie][:name]
     @results = Tmdb::Search.movie(@movie)
     @movies = @results.results
