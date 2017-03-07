@@ -29,7 +29,7 @@
 
 <%= simple_form_for @movie, method: "get", url:list_search_results_path(@list.id) do |f| %>
   <%= f.input :name, label: 'What movie?', placeholder: 'Terminator' %>
-  <%= f.button :submit, value: 'Add movie to list', class: 'btn btn-large btn-success' %>
+  <%= f.button :submit, value: 'Search', class: 'btn btn-large btn-success' %>
 <% end %>
 
 
