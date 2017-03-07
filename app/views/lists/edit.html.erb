@@ -24,19 +24,8 @@
 <!-- card should start here -->
 
 <% @list.movie_lists.each do |movie_list| %>
-  <p><strong><%= movie_list.movie.name %></strong></p>
-  <p><%= movie_list.movie.release_date %></p>
-  <p><%= movie_list.movie.overview %></p>
-  <p>
-    <%= link_to movie_url(movie_list.movie.id, only_path: false) do %>
-      <%= image_tag movie_list.movie.poster_url %>
-    <% end %>
-  </p>
-  <p><%= button_to "Remove movie", list_remove_movie_path(list_id: @list.id, id: movie_list.id),  method: :delete, class:"btn btn-success btn-lg width50 text-center"%>
-    <%= render 'shared/facebook_btn', movie: movie_list.movie %>
-
-  </p>
-  <% end %>
+  <%= render 'shared/movie_card_horizontal', movie: movie_list.movie %>
+<% end %>
 
 
 
