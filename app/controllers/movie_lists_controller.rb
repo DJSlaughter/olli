@@ -6,13 +6,13 @@ class MovieListsController < ApplicationController
     new_movie.save
     new_movie_list = MovieList.new(list_id: params[:list_id], movie_id: new_movie.id)
     new_movie_list.save
-    redirect_to list_path(params[:list_id])
+    redirect_to edit_list_path(params[:list_id])
   end
 
   def remove_movie
        disposable_movie= MovieList.find(params[:id])
        disposable_movie.destroy
-       redirect_to list_path(params[:list_id])
+       redirect_to edit_list_path(params[:list_id])
 
 
   end

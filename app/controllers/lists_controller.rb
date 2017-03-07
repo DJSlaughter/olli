@@ -23,7 +23,7 @@ class ListsController < ApplicationController
     # @list.movies << movies
 
     if @list.save
-      redirect_to @list
+      redirect_to edit_list_path(@list)
     else
       render :new
     end
@@ -41,6 +41,13 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+    @movie = Movie.new
+
+    if params[:movie] && params[:movie][:name]
+      @movie = params[:movie][:name]
+      @results = Tmdb::Search.movie(@movie)
+      @movies = @results.results
+    end
   end
 
   def destroy
