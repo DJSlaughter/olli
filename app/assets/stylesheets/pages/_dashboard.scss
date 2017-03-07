@@ -110,6 +110,29 @@
   margin: 30px;
 }
 
+.movie-card-horizontal {
+ align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  border: 1px solid #ccc;
+  margin: 30px;
+
+}
+
+
+.movie-card-horizontal p {
+
+
+  color: #333333;
+  margin-bottom: 0;
+  font-weight: lighter;
+  font-size: 15px;
+  margin-top: 0;
+  padding-top: 5px;
+  text-align: justify;
+}
+
 .product-unique {
   padding: 20px;
   border-radius: 3px;
