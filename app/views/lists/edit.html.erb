@@ -10,19 +10,18 @@
     <% end %>
 
 
-<p>
+    <p>
+    <%= simple_form_for @movie, method: "get", url:edit_list_path(@list.id) do |f| %>
+      <%= f.input :name, label: 'What movie?', placeholder: 'Terminator' %>
+      <%= f.button :submit, value: 'Search', class: 'btn btn-large btn-success' %>
+    <% end %>
 
-<%= simple_form_for @movie, method: "get", url:edit_list_path(@list.id) do |f| %>
-  <%= f.input :name, label: 'What movie?', placeholder: 'Terminator' %>
-  <%= f.button :submit, value: 'Search', class: 'btn btn-large btn-success' %>
-<% end %>
+    <% if !@movies.nil? %>
+    <%= render 'shared/search_results', list: @list, movies: @movies %>
+    <% end %>
+    </p>
 
-<% if !@movies.nil? %>
-<%= render 'shared/search_results', list: @list, movies: @movies %>
-<% end %>
-
-</p>
-
+<!-- card should start here -->
 
 <% @list.movie_lists.each do |movie_list| %>
   <p><strong><%= movie_list.movie.name %></strong></p>
