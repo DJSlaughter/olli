@@ -10,9 +10,13 @@ class MovieListsController < ApplicationController
   end
 
   def remove_movie
-       disposable_movie= MovieList.find(params[:id])
-       disposable_movie.destroy
-       redirect_to edit_list_path(params[:list_id])
+
+   disposable_movie_list = MovieList.where(list_id: params[:list_id])
+   movie_list_destroy = disposable_movie_list.find do |x| x.id = params[:movie_id] end
+
+   MovieList.destroy(movie_list_destroy.id)
+
+   redirect_to edit_list_path(params[:list_id])
 
 
   end

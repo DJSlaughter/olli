@@ -1,6 +1,6 @@
 
 
-<div class="horizontal-unique">
+<div id="<%= movie.id %>" class="horizontal-unique">
   <div class="row">
 
    <div class="col-sm-2">
@@ -18,21 +18,19 @@
   <div class="col-sm-2">
    <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
 
-<<<<<<< HEAD
-    <li><a href="#"><i class="fa fa-share"></i></a></li>
-=======
 
-    <li>
-    <a href="#"><i class="fa fa-share-square-o"></i></a></li>
->>>>>>> 962b068d6e4f1cb494d6e2da3dec1fc6c293beac
+    <li><a href="#"><i class="fa fa-share"></i></a></li>
     <p>Share</p>
 
+
     <li>
- <%= link_to list_remove_movie_path(list_id: list.id, title: m.title, release_date: m.releasedate, overview: m.overview, poster_url: "https://image.tmdb.org/t/p/w640/#{m.poster_path}") do %>
-    <i class="fa fa-trash-o"></i>
-    <% end %>
-    </li>
-    <p>Remove from list</p>
+      <%= link_to list_remove_movie_path(list, movie_id: movie.id), method: :delete do  %>
+
+         <i class="fa fa-trash-o"></i>
+      <% end %>
+<p>Remove from list</p>
+</li>
+
 
   </ul>
 </div>

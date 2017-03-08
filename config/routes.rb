@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     get '/add_movie', to: 'movie_lists#add_movie'
     delete '/remove_movie', to: 'movie_lists#remove_movie'
+
   end
   get '/search', to: 'application#search'
   get '/search_results', to: 'application#search_results'
