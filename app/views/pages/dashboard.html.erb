@@ -71,7 +71,7 @@
       <p> <%= link_to "Create your own List", new_list_path, class:"navbar-wagon-item navbar-button btn" %>
       </p>
 
-    </div>
+  </div>
 
 
     <!-- endd of button -->
@@ -83,73 +83,38 @@
       <div class="row">
 
         <div class="text-center product-header">
-          <p><span>Movies</span> recommended by <span> your friends</span></p>
+          <p><span></span>Users<span> that you follow</span></p>
         </div>
 
         <div class="product">
-          <div class="product-unique">
             <div class="row">
+                <% current_user.followees.each do|| %>
 
-             <div class="col-sm-2">
-              <img src='assets/images/avatar.png'' class="avatar-bordered"/>
+                  <%= render 'shared/user_card', user: current_user %>
+
+                <% end %>
+
             </div>
-            <div class='col-sm-8 product-body'>
-              <div class="product-inline ">
-                <p><span>Dans</span> is recommending you <span>this movie</span></p>
-              </div>
-              <h3>
-               <a class="tags">tag1</a>
-               <a class="tags">tag2</a>
-               <a class="tags">tag2</a>
-               <a class="tags">tag3</a>
-               <a class="tags">tag3</a>
-             </h3>
-           </div>
-           <div class="col-sm-2">
-             <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
-              <li><a href=""><i class="fa fa-heart"></i></a></li>
-              <li><a href=""><i class="fa fa-share"></i></a></li>
-              <li><a href=""><i class="fa fa-star"></i></a></li>
-            </ul>
-          </div>
         </div>
       </div>
-      <!-- second recomendation -->
-      <div class="product-unique">
-        <div class="row">
-         <div class="col-sm-2">
-          <img src='assets/images/avatar.png'' class="avatar-bordered"/>
+  </div>
+
+<div class="container">
+      <div class="row">
+
+        <div class="text-center product-header">
+          <p><span></span>Users<span> that follow you</span></p>
         </div>
 
-        <div class='col-sm-8 product-body'>
+        <div class="product">
+            <div class="row">
+                <% current_user.followers.each do|| %>
 
-          <div class="product-inline ">
-            <p><span>Dans</span> is recommending you <span>this movie</span></p>
-          </div>
+                  <%= render 'shared/user_card', user: current_user %>
 
+                <% end %>
 
-          <h3>
-           <a class="tags">tag1</a>
-           <a class="tags">tag2</a>
-           <a class="tags">tag2</a>
-           <a class="tags">tag3</a>
-           <a class="tags">tag3</a>
-         </h3>
-
-       </div>
-
-       <div class="col-sm-2">
-         <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
-          <li><a href=""><i class="fa fa-heart"></i></a></li>
-          <li><a href=""><i class="fa fa-share"></i></a></li>
-          <li><a href=""><i class="fa fa-star"></i></a></li>
-        </ul>
+            </div>
+        </div>
       </div>
-    </div>
-
   </div>
-  </div>
-  </div>
-  </div>
-
-
