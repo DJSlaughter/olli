@@ -1,33 +1,38 @@
-<div class="product">
 
-  <div class="product-unique">
-    <div class="row">
 
-     <div class="col-sm-2">
-      <%= image_tag movie.poster_url, class: "avatar-bordered" %>
+<div class="horizontal-unique">
+  <div class="row">
+
+   <div class="col-sm-2">
+    <%= image_tag movie.poster_url, class: "movie-square-poster" %>
+  </div>
+  <div class='col-sm-7 movie-card-horizontal'>
+  <div class="movie-inline ">
+      <h2><%= movie.name %></h2>
+      <p class=""><%= movie.overview %></p>
+
     </div>
-    <div class='col-sm-8 movie-card-horizontal'>
-      <div class="product-inline ">
-        <h2><%= movie.name %></h2>
-        <p class=""><%= movie.overview %></p>
-
-      </div>
-      <!-- <h3> -->
+    <!-- <h3> -->
                <!-- <a class="tags">tag1</a>
                <a class="tags">tag2</a>
                <a class="tags">tag2</a>
                <a class="tags">tag3</a>
                <a class="tags">tag3</a> -->
                <!-- </h3> -->
+             </div>
 
              <div class="col-sm-2">
-               <ul class="list-inline product-controls-no-flex hidden-sm hidden-xs">
+               <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
 
-                <li><a href=""><i class="fa fa-share"></i></a></li>
+                <li><a href="#"><i class="fa fa-share"></i></a></li>
+                <p>Share</p>
+
+                 <li><a href=""><i class="fa fa-plus"></i></a></li>
+                 <p>Add to list</p>
 
               </ul>
-                </div>
             </div>
+
           </div>
         </div>
-      </div>
+
