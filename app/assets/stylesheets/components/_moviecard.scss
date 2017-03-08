@@ -1,0 +1,89 @@
+// Big card that contain one movie
+
+.horizontal-unique {
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  margin: 20px;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: -2px -2px 39px -6px rgba(0,0,0,0.21);
+  -moz-box-shadow: -2px -2px 39px -6px rgba(0,0,0,0.21);
+  box-shadow: 2px 1px 21px -3px rgba(0, 0, 0, 0.21);
+}
+
+
+.horizontal-unique:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+
+
+// smaller card that contain both movie title and description
+
+.movie-card-horizontal {
+ align-items: center;
+ border-radius: 3px;
+ transition: all 0.15s ease;
+}
+
+.movie-card-horizontal p {
+  color: #333333;
+  margin-bottom: 0;
+  font-weight: lighter;
+  font-size: 15px;
+  margin-top: 0;
+  padding-top: 5px;
+  text-align: justify;
+}
+
+.movie-inline {
+  display: inline-block;
+  text-align: justify;
+}
+
+
+
+// movie poster
+
+.movie-square-poster {
+ width: 100px;
+ border-radius: 2px;
+ margin: 20px 20px 20px 20px;
+
+}
+
+
+// the share button
+.movie-horizontal-share {
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.movie-horizontal-share a {
+  align-items: center;
+  padding: 20px 20px;
+  font-size: 50px;
+  color: #00a894;
+  margin-top: 20px;
+  margin-right: -100px;
+}
+.movie-horizontal-share a:hover {
+  color: #D3473C !important;
+}
+.movie-horizontal-share-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+.movie-horizontal-share p {
+  align-items: center;
+  font-size: 10px;
+  color: #000000;
+  margin-right: -100px;
+  font-weight: 900;
+  margin-top: -10px;
+
+}
+
