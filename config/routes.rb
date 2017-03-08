@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users,
-   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+   controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "registrations" }
 
   root to: 'pages#home'
 
   resources :lists do
-
+    get '/welcome_new', on: :collection, to: 'lists#welcome_new'
     resources :movies, only: [:new, :create]
     get '/search', to: 'movies#search'
     get '/search_results', to: 'movies#search_results'
@@ -13,13 +13,9 @@ Rails.application.routes.draw do
 
     get '/add_movie', to: 'movie_lists#add_movie'
     delete '/remove_movie', to: 'movie_lists#remove_movie'
-
   end
-
-
-    get '/search', to: 'application#search'
-    get '/search_results', to: 'application#search_results'
-
+  get '/search', to: 'application#search'
+  get '/search_results', to: 'application#search_results'
   resources :movies, only: [:show, :index, :new, :create]
 
 
