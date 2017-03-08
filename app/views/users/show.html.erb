@@ -5,7 +5,7 @@
 <!-- Follow button that will set up followship with current_user -->
 
 
-<div><%= image_tag(:facebook_picture_url) %> </div>
+<div class="avatar-bordered"><%= image_tag "facebook_picture_url"%></div>
 <div><h1><%= "You are looking at #{@user.first_name}"  %></h1></div>
 
 <% if !@following %>
