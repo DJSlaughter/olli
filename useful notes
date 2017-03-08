@@ -1,3 +1,8 @@
+///pushing to heroku
+git remote -v
+git push heroku master
+heroku runs rails db:migrate
+heroku open
 
 ///pushing to heroku
 git remote -v

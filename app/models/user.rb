@@ -15,6 +15,11 @@ class User < ApplicationRecord
   has_many :tagged_movies, through: :tags, source: :movie #feature to be added later
   has_many :favourite_movies, through: :favourites, source: :movie #feature to be added later
   has_many :suggestions #feature to be added later
+  # User to user following relationships (followships)
+  has_many :follower_followships, :class_name => 'Followship', :foreign_key => :follower_id # connects users to foreign keys and their role
+  has_many :followee_followships, :class_name => 'Followship', :foreign_key => :followee_id
+  has_many :followers, :through => :followee_followships # links their role as follower to whoever is their followee (following them)
+  has_many :followees, :through => :follower_followships
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

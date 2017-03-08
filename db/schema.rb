@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303155012) do
+ActiveRecord::Schema.define(version: 20170308113135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,13 @@ ActiveRecord::Schema.define(version: 20170303155012) do
     t.index ["user_id"], name: "index_favourites_on_user_id", using: :btree
   end
 
-  create_table "followers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_followers_on_user_id", using: :btree
+  create_table "followships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["followee_id"], name: "index_followships_on_followee_id", using: :btree
+    t.index ["follower_id"], name: "index_followships_on_follower_id", using: :btree
   end
 
   create_table "genres", force: :cascade do |t|
@@ -120,7 +122,6 @@ ActiveRecord::Schema.define(version: 20170303155012) do
 
   add_foreign_key "favourites", "movies"
   add_foreign_key "favourites", "users"
-  add_foreign_key "followers", "users"
   add_foreign_key "lists", "users"
   add_foreign_key "movie_genres", "genres"
   add_foreign_key "movie_genres", "movies"

@@ -13,6 +13,10 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def welcome_new
+    @list = List.new
+  end
+
   def create
     # @list = List.new(params[:something])
     @list = List.new
