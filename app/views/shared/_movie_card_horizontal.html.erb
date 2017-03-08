@@ -4,40 +4,30 @@
   <div class="row">
 
    <div class="col-sm-2">
-    <%= image_tag movie.poster_url, class: "movie-square-poster" %>
+    <%= image_tag movie.poster_url %>
   </div>
   <div class='col-sm-7 movie-card-horizontal'>
-  <div class="movie-inline ">
+    <div class="movie-inline ">
       <h2><%= movie.name %></h2>
-      <p class=""><%= movie.overview %></p>
+     <p class=""><%= truncate(movie.overview, :ommision => "...Read More", :length => 400) %></p>
 
     </div>
-    <!-- <h3> -->
-               <!-- <a class="tags">tag1</a>
-               <a class="tags">tag2</a>
-               <a class="tags">tag2</a>
-               <a class="tags">tag3</a>
-               <a class="tags">tag3</a> -->
-               <!-- </h3> -->
-             </div>
 
-             <div class="col-sm-2">
-               <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
+  </div>
 
-                <li><a href="#"><i class="fa fa-share-square-o"></i></a></li>
-                <p>Share</p>
-
-                 <li><a href=""><i class="fa fa-trash-o"></i></a></li>
-                 <p>Remove</p>
+  <div class="col-sm-2">
+   <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
 
 
+    <li>
+    <a href="#"><i class="fa fa-share-square-o"></i></a></li>
+    <p>Share</p>
 
-              </ul>
-            </div>
+    <li><a href=""><i class="fa fa-trash-o"></i></a></li>
+    <p>Add to list</p>
 
-          </div>
-        </div>
+  </ul>
+</div>
 
-
-
-
+</div>
+</div>

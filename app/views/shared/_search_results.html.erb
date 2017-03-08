@@ -1,23 +1,62 @@
 <!-- This is a partial page for search results -->
 
 <div class="container">
+
 <div class="row">
   <h1>Search Results</h1>
   <% if movies.length > 0  %>
+
     <% movies.each do |m| %>
-    <div class="col-xs-12 col-sm-3">
-      <hr>
-      <h5><%= m.title %></h5>
-      <%= link_to "Add this movie to #{list.name}", list_add_movie_path(list_id: list.id, title: m.title, release_date: m.releasedate, overview: m.overview, poster_url: "https://image.tmdb.org/t/p/w640/#{m.poster_path}") %>
-      <hr>
-      <%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}", class:'img-responsive', :width => 360, :height => 500, :crop => :fill %>
-      <hr>
-    </div>
-    <% end %>
-  <% else %>
-    No results found
-  <% end %>
 
+
+    <div class="horizontal-unique">
+     <div class="row">
+
+       <div class="col-sm-2">
+        <% if m.poster_path.present? %>
+        <%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}", class:'img-responsive', :width => 360, :height => 500, :crop => :fill %>
+        <% else %>
+        <%=image_tag "ollimovie.png", class:'img-responsive', :width => 360, :height => 500, :crop => :fill %>
+        <% end %>
+      </div>
+
+      <div class='col-sm-7 movie-card-horizontal'>
+        <div class="movie-inline ">
+          <h5><%= m.title %></h5>
+          <p class=""><%= truncate(m.overview, :ommision => "...Read More", :length => 400) %></p>
+
+
+          <%= link_to "Add this movie to your #{list.name} list", list_add_movie_path(list_id: list.id, title: m.title, release_date: m.releasedate, overview: m.overview, poster_url: "https://image.tmdb.org/t/p/w640/#{m.poster_path}") %>
+        </div>
+      </div>
+
+
+      <div class="col-sm-2">
+       <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
+
+         <li><a href=""><i class="fa fa-share-square-o"></i></a></li>
+         <p>Share</p>
+
+         <li>
+           <%= link_to list_add_movie_path(list_id: list.id, title: m.title, release_date: m.releasedate, overview: m.overview, poster_url: "https://image.tmdb.org/t/p/w640/#{m.poster_path}") do %>
+             <i class="fa fa-plus-square-o"></i>
+           <% end %>
+         </li>
+         <p>Add to list</p>
+
+       </ul>
+     </div>
+
+
+
+   </div>
+ </div>
+
+ <% end %>
+ <% else %>
+ No results found
+ <% end %>
 
 </div>
 </div>
+
