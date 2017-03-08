@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
 
   end
 
+
   def search
     @movie = Movie.new
   end

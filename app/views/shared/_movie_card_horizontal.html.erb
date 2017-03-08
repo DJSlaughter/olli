@@ -1,6 +1,6 @@
 
 
-<div class="horizontal-unique">
+<div id="<%= movie.id %>" class="horizontal-unique">
   <div class="row">
 
    <div class="col-sm-2">
@@ -19,12 +19,18 @@
    <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
 
 
-    <li>
-    <a href="#"><i class="fa fa-share-square-o"></i></a></li>
+    <li><a href="#"><i class="fa fa-share"></i></a></li>
     <p>Share</p>
 
-    <li><a href=""><i class="fa fa-trash-o"></i></a></li>
-    <p>Add to list</p>
+
+    <li>
+      <%= link_to list_remove_movie_path(list, movie_id: movie.id), method: :delete do  %>
+
+         <i class="fa fa-trash-o"></i>
+      <% end %>
+<p>Remove from list</p>
+</li>
+
 
   </ul>
 </div>

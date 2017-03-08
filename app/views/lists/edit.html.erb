@@ -32,7 +32,7 @@
 <!-- card should start here -->
 <div class="col-sm-12">
 <% @list.movie_lists.each do |movie_list| %>
-  <%= render 'shared/movie_card_horizontal', movie: movie_list.movie %>
+  <%= render 'shared/movie_card_horizontal', movie: movie_list.movie, list: @list %>
 <% end %>
 </div>
 
