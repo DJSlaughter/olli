@@ -7,6 +7,9 @@ class Movie < ApplicationRecord
   has_many :movie_genre
 
   validates :name, presence: true
+  include PgSearch
+  multisearchable against: [:name, :overview]
+
 
   # has_many :users, through: :tags # These relationship not required yet
   # has_many :users, through: :favourites # These relationship not required yet

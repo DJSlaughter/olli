@@ -6,112 +6,228 @@
 
 
 
-<!-- banner sentence -->
+  <!-- banner sentence -->
 
-<div class="row">
-<div class="banner-header">
-  <p><span>Currated</span> movies from your <span> close friends</span></p>
-</div>
-</div>
+  <div class="row">
+    <div class="banner-header">
+      <p><span>Currated</span> movies from your <span> close friends</span></p>
+    </div>
+  </div>
 
-     <!-- Search form -->
-     <div class="row">
-<div class="banner-content">
-<div class="col-sm-2">
-
-
-</div>
+  <!-- Search form -->
+  <div class="row">
+    <div class="banner-content">
+      <div class="col-sm-2">
 
 
-    <form action=<%= dashboard_url %> method="get" class="navbar-wagon-search col-sm-4">
-        <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search something">
+      </div>
+
+
+      <form action=<%= root_path %> method="get" class="navbar-wagon-search col-sm-4">
+        <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search movie, genre or mood">
         <button type="submit" class="navbar-wagon-search-btn">
           <i class="fa fa-search"></i>
         </button>
       </form>
 
 
- <select class="banner-form form-control col-sm-2 input-lg">
-        <option>Title</option>
-        <option>Genre</option>
-        <option>Mood</option>
-      </select>
-
-<div class="col-sm-2">
-    <a class="btn button-banner">SEARCH</a>
+      <div class="col-sm-2">
+        <a class="btn button-banner">SEARCH</a>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
 
 <div class="col-sm-2">
 
 </div>
 
-<!-- end of banner -->
+<% if @movie_results.size > 0 %>
 <div class="container">
-<div class="row">
-<div class="top-list">
+  <div class="row">
+    <h3>Search Results Movies</h3>
+    <% @movie_results.each do |m|%>
+    <div class="col-xs-12 col-sm-6">
+      <%= m.name %>
+      <%= image_tag m.poster_url %>
+      <%= "List: #{m.lists.name}" %>
+    </div>
 
+<<<<<<< HEAD
 <div class="text-center product-header">
             <p>Curated <span>Lists</span></p>
           </div>
+=======
+    <% end %>
+  </div>
+</div>
+<% end %>
+>>>>>>> 1b041e6a8acbc9ff63ded95241bce5dadbd53e53
 
+<% if @list_results.size > 0 %>
+<div class="container">
+  <div class="row">
+    <h3>Search Results Lists</h3>
+    <% @list_results.each do |l|%>
+    <div class="col-xs-12 col-sm-6">
+      <%= l.name %>
+    </div>
+    <% end %>
+  </div>
 </div>
+<% end %>
+
+<% if @genre_results.size > 0 %>
+<div class="container">
+  <div class="row">
+    <h3>Search Results Genres</h3>
+    <% @genre_results.each do |g|%>
+    <p><%= g.name %></p>
+    <% g.movies.each do |m| %>
+    <div class="col-xs-12 col-sm-6">
+      <%= m.name %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
+<% end %>
+
+<!-- end of banner -->
+<div class="container">
+  <div class="row">
+    <div class="top-list">
+
+      <div class="text-center product-header">
+        <p><span>Movies</span> top lists</p>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 
 <!-- top users section  -->
 
 <div class="container">
-<div class="row">
-<div class="top-users">
+  <div class="row">
+    <div class="top-users">
 
+<<<<<<< HEAD
 <div class="text-center product-header">
             <p><span>Curators</span></p>
           </div>
+=======
+      <div class="text-center product-header">
+        <p><span>Olli</span> top users</p>
+      </div>
+>>>>>>> 1b041e6a8acbc9ff63ded95241bce5dadbd53e53
 
 
- <script type="text/javascript">
+      <script type="text/javascript">
         jssor_1_slider_init = function() {
 
-            var jssor_1_options = {
-              $AutoPlay: true,
-              $Idle: 0,
-              $AutoPlaySteps: 4,
-              $SlideDuration: 2500,
-              $SlideEasing: $Jease$.$Linear,
-              $PauseOnHover: 4,
-              $SlideWidth: 140,
-              $Cols: 7
-            };
+          var jssor_1_options = {
+            $AutoPlay: true,
+            $Idle: 0,
+            $AutoPlaySteps: 4,
+            $SlideDuration: 2500,
+            $SlideEasing: $Jease$.$Linear,
+            $PauseOnHover: 4,
+            $SlideWidth: 140,
+            $Cols: 7
+          };
 
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+          var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-            /*responsive code begin*/
-            /*remove responsive code if you don't want the slider scales while window resizing*/
-            function ScaleSlider() {
-                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-                if (refSize) {
-                    refSize = Math.min(refSize, 809);
-                    jssor_1_slider.$ScaleWidth(refSize);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
+          /*responsive code begin*/
+          /*remove responsive code if you don't want the slider scales while window resizing*/
+          function ScaleSlider() {
+            var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+            if (refSize) {
+              refSize = Math.min(refSize, 809);
+              jssor_1_slider.$ScaleWidth(refSize);
             }
-            ScaleSlider();
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*responsive code end*/
+            else {
+              window.setTimeout(ScaleSlider, 30);
+            }
+          }
+          ScaleSlider();
+          $Jssor$.$AddEvent(window, "load", ScaleSlider);
+          $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+          $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+          /*responsive code end*/
         };
+<<<<<<< HEAD
     </script>
     <style></style>
 
+=======
+      </script>
+      <style></style>
+      <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:100px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+          <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+          <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:100px;overflow:hidden;">
+          <div>
+           <%= image_tag "movies1", :data => {:u => "image"} %>
 
-</div>
+         </div>
+         <div>
+           <%= image_tag "movies1", :data => {:u => "image"} %>
+
+         </div>
+         <div>
+           <%= image_tag "movies1", :data => {:u => "image"} %>
+
+         </div>
+         <div>
+           <%= image_tag "movies1", :data => {:u => "image"} %>
+
+         </div>
+         <div>
+           <%= image_tag "movie1", :data => {:u => "image"} %>
+
+         </div>
+         <div>
+           <%= image_tag "movie1", :data => {:u => "image"} %>
+
+         </div>
+         <div>
+          <%= image_tag "movie1", :data => {:u => "image"} %>
+        </div>
+        <div>
+         <%= image_tag "movie1.png", :data => {:u => "image"} %>
+
+       </div>
+       <div>
+         <%= image_tag "movie1", :data => {:u => "image"} %>
+
+       </div>
+       <div>
+         <%= image_tag "movie1", :data => {:u => "image"} %>
+
+       </div>
+       <div>
+         <%= image_tag "movie1", :data => {:u => "image"} %>
+
+       </div>
+
+
+
+       <a data-u="any" href="http://www.jssor.com" style="display:none">Scrolling Logo Thumbnail Slider</a>
+
+
+
+
+     </div>
+   </div>
+>>>>>>> 1b041e6a8acbc9ff63ded95241bce5dadbd53e53
+
+ </div>
 </div>
 </div>
 
@@ -121,15 +237,19 @@
 
 
 <div class="container">
-<div class="row">
+  <div class="row">
 
-<div class="text-center product-header">
+    <div class="text-center product-header">
 
 
+<<<<<<< HEAD
 <a href="/lists/new" class=" btn navbar-button">Start creating your list now.</a>
+=======
+      <a href="/lists/new" class=" btn button-home">Start creating your list now.</a>
+>>>>>>> 1b041e6a8acbc9ff63ded95241bce5dadbd53e53
 
 
 
-</div>
-</div>
+    </div>
+  </div>
 </div>

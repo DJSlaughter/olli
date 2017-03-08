@@ -3,6 +3,17 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    @movie_results = []
+    @list_results = []
+    @genre_results = []
+    if params[:search_value]
+      results = PgSearch.multisearch(params[:search_value])
+      results.each do |r|
+        @movie_results << r.searchable if r.searchable.class == Movie
+        @list_results << r.searchable if r.searchable.class == List
+        @genre_results << r.searchable if r.searchable.class == Genre
+      end
+    end
    @lists = List.all
    @movies = Movie.all
 

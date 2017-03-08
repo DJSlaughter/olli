@@ -2,10 +2,25 @@ class MovieListsController < ApplicationController
 
 
   def add_movie
-    new_movie = Movie.new(name: params[:title], overview: params[:overview], release_date: params[:release_date], poster_url: params[:poster_url])
-    new_movie.save
-    new_movie_list = MovieList.new(list_id: params[:list_id], movie_id: new_movie.id)
+    if Movie.find_by_name(params[:title])
+      @new_movie = Movie.find_by_name(params[:title])
+    else
+      @new_movie = Movie.new(name: params[:title], overview: params[:overview], release_date: params[:release_date], poster_url: params[:poster_url])
+    end
+    @new_movie.save
+    new_movie_list = MovieList.new(list_id: params[:list_id], movie_id: @new_movie.id)
     new_movie_list.save
+
+    params[:genre_ids].each do |g|
+      gName = Tmdb::Genre.movie_list.select{|x| x.id == g.to_i}.first.name
+      genreInDB = Genre.find_by_name(gName)
+      if genreInDB
+        MovieGenre.create(genre_id: genreInDB.id, movie_id: @new_movie.id)
+      else
+        genre = Genre.create(name: gName)
+        MovieGenre.create(genre_id: genre.id, movie_id: @new_movie.id)
+      end
+    end
     redirect_to edit_list_path(params[:list_id])
   end
 
