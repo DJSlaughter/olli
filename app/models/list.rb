@@ -3,6 +3,9 @@ class List < ApplicationRecord
   has_many :movie_lists
   has_many :movies, through: :movie_lists
 
+  include PgSearch
+  multisearchable against: [:name]
+
 
   def first_movie_url
     movie = self.movies.first
