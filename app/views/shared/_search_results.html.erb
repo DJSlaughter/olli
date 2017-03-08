@@ -1,26 +1,14 @@
 <!-- This is a partial page for search results -->
 
+<!-- This is a partial page for search results -->
+
 <div class="container">
+  <div class="row">
+    <h1>Search Results</h1>
 
-<div class="row">
-  <h1>Search Results</h1>
-  <% if movies.length > 0  %>
 
+    <% if movies.length > 0 %>
     <% movies.each do |m| %>
-
-    <div class="col-xs-12 col-sm-3">
-      <hr>
-      <h5><%= m.title %></h5>
-      <%= link_to "Add this movie to #{list.name}", list_add_movie_path(list_id: list.id, title: m.title, release_date: m.releasedate, overview: m.overview, poster_url: "https://image.tmdb.org/t/p/w640/#{m.poster_path}", genre_ids: m.genre_ids ) %>
-      <hr>
-      <%= image_tag "https://image.tmdb.org/t/p/w640/#{m.poster_path}", class:'img-responsive', :width => 360, :height => 500, :crop => :fill %>
-      <hr>
-    </div>
-    <% end %>
-  <% else %>
-    No results found
-  <% end %>
-
 
 
     <div class="horizontal-unique">
