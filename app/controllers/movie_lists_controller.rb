@@ -11,14 +11,16 @@ class MovieListsController < ApplicationController
     new_movie_list = MovieList.new(list_id: params[:list_id], movie_id: @new_movie.id)
     new_movie_list.save
 
-    params[:genre_ids].each do |g|
-      gName = Tmdb::Genre.movie_list.select{|x| x.id == g.to_i}.first.name
-      genreInDB = Genre.find_by_name(gName)
-      if genreInDB
-        MovieGenre.create(genre_id: genreInDB.id, movie_id: @new_movie.id)
-      else
-        genre = Genre.create(name: gName)
-        MovieGenre.create(genre_id: genre.id, movie_id: @new_movie.id)
+    if params[:genre_ids]
+      params[:genre_ids].each do |g|
+        gName = Tmdb::Genre.movie_list.select{|x| x.id == g.to_i}.first.name
+        genreInDB = Genre.find_by_name(gName)
+        if genreInDB
+          MovieGenre.create(genre_id: genreInDB.id, movie_id: @new_movie.id)
+        else
+          genre = Genre.create(name: gName)
+          MovieGenre.create(genre_id: genre.id, movie_id: @new_movie.id)
+        end
       end
     end
     redirect_to edit_list_path(params[:list_id])
@@ -29,12 +31,12 @@ class MovieListsController < ApplicationController
    disposable_movie_list = MovieList.where(list_id: params[:list_id])
    movie_list_destroy = disposable_movie_list.find do |x| x.id = params[:movie_id] end
 
-   MovieList.destroy(movie_list_destroy.id)
+     MovieList.destroy(movie_list_destroy.id)
 
-   redirect_to edit_list_path(params[:list_id])
+     redirect_to edit_list_path(params[:list_id])
 
 
-  end
+   end
   # def index
   #   @movie_lists = MovieList.all
   # end
