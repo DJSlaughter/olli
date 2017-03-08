@@ -83,7 +83,7 @@
       <div class="row">
 
         <div class="text-center product-header">
-          <p><span></span>Users<span> that you follow</span></p>
+         <p>Your <span>Followers</span></p>
         </div>
 
         <div class="product">
@@ -103,14 +103,17 @@
       <div class="row">
 
         <div class="text-center product-header">
-          <p><span></span>Users<span> that follow you</span></p>
+        <p>People you <span>follow</span></p>
         </div>
 
         <div class="product">
             <div class="row">
                 <% current_user.followers.each do|| %>
 
+                <div class="avatar-bordered">
+
                   <%= render 'shared/user_card', user: current_user %>
+                  </div>
 
                 <% end %>
 
