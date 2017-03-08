@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  layout "home", only: [ :home ]
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
@@ -13,6 +14,7 @@ class PagesController < ApplicationController
     @movies_out = []
 
     search_value = params[:search_value]
+
       if !search_value.nil?
         #@search_result = Tmdb::Genre.movie_list
         #@search_result = Tmdb::Search.keyword(search_value).results

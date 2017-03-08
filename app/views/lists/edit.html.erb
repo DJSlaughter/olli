@@ -1,1 +1,45 @@
-<h1>You are in the EDIT of LISTS</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+    <!-- need to add a button to give the list a name IN CASE OF IT BEING EMPTY -->
+    <h1><%= @list.name  %></h1>
+    <p>Please add a movie to your <strong><%= @list.name %></strong> list.</p>
+    <% if @list.name.empty? %>
+    <p><%= link_to "Give your list a name", new_list_path, class: 'btn btn-large btn-success' %></p>
+    <% end %>
+
+
+    <p>
+
+    <%= simple_form_for @movie, method: "get", url:edit_list_path(@list.id) do |f| %>
+
+
+      <%= f.input :name, label: 'What movie?', placeholder: 'Terminator' %>
+
+      <%= f.button :submit, value: 'Search', class: 'btn btn-large btn-success' %>
+    <% end %>
+    </div>
+
+<div class="col-sm-3">
+
+    <% if !@movies.nil? %>
+    <%= render 'shared/search_results', list: @list, movies: @movies %>
+    <% end %>
+    </p>
+  </div>
+
+<!-- card should start here -->
+<div class="col-sm-12">
+<% @list.movie_lists.each do |movie_list| %>
+  <%= render 'shared/movie_card_horizontal', movie: movie_list.movie %>
+<% end %>
+</div>
+
+
+</div>
+
+  </div>
+</div>
+
+

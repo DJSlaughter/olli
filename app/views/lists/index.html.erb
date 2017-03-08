@@ -1,11 +1,10 @@
-<h1>You are in the INDEX of LISTS</h1>
+<h1>Your LISTS</h1>
 
 <ul>
   <% @lists.each do |list| %>
     <li data-list-id="<%= list.id %>">
       <%= list.user_id %>
-      <%= link_to "show", list_path(list)%>
-      <%= link_to "Edit", list, method: :edit, remote: true %>
+      <%= link_to "show", edit_list_path(list)%>
       <%= link_to "Delete", list, method: :delete, remote: true %>
     </li>
   <% end %>
