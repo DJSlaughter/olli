@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   devise_for :users,
    controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "registrations" }
 
@@ -14,9 +16,18 @@ Rails.application.routes.draw do
     get '/add_movie', to: 'movie_lists#add_movie'
     delete '/remove_movie', to: 'movie_lists#remove_movie'
   end
+
   get '/search', to: 'application#search'
   get '/search_results', to: 'application#search_results'
+
   resources :movies, only: [:show, :index, :new, :create]
+  resources :users, only: [:show]
+
+  # route to create a user to user following relationship (followship)
+  resources :followships, only: [:create] do
+    delete "/", to: 'followships#destroy', on: :collection
+  end
+
 
 
   get '/dashboard', to: 'pages#dashboard'
