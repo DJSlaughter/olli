@@ -8,12 +8,17 @@ class FollowshipsController < ApplicationController
       f.follower = current_user
       f.followee = User.find(params[:user_id])
       f.save
+      redirect_to(:back)
   end
 
   def destroy
       fd = Followship.where(followee_id: params[:user_id])
-      fd.destroy
+      fd.destroy_all
+      redirect_to(:back)
+
   end
+
+
 
 
 
