@@ -1,3 +1,7 @@
+http://localhost:3000/lists/11/edit?utf8=%E2%9C%93&movie%5Bname%5D=Dog&commit=Search
+http://localhost:3000/lists/11/edit?utf8=%E2%9C%93&Dog%5Bname%5D=Dog&commit=Search
+
+
 ///pushing to heroku
 git remote -v
 git push heroku master
