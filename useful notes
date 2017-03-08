@@ -5,8 +5,11 @@ http://localhost:3000/lists/11/edit?utf8=%E2%9C%93&Dog%5Bname%5D=Dog&commit=Sear
 ///pushing to heroku
 git remote -v
 git push heroku master
-heroku runs rails db:migrate
+heroku run rails db:migrate
 heroku open
+heroku run rails bundle install
+figaro heroku:set -e production
+heroku restart
 
 ///pushing to heroku
 git remote -v
