@@ -19,6 +19,7 @@ class PagesController < ApplicationController
 
   end
 
+
   def dashboard
     @lists = List.all
     @movie_titles = []
