@@ -7,12 +7,13 @@
   <div class='col-sm-7 movie-card-horizontal'>
     <div class="movie-inline ">
       <h2><%= movie.name %></h2>
-     <p class=""><%= truncate(movie.overview, :ommision => "...Read More", :length => 400) %></p>
+     <p class=""><%= truncate(movie.overview, :ommision => "...Read More", :length => 300) %></p>
 
     </div>
 
   </div>
 
+<% unless current_page?(root_path) %>
   <div class="col-sm-2">
    <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
 
@@ -32,6 +33,6 @@
 
   </ul>
 </div>
-
+<% end %>
 </div>
 </div>
