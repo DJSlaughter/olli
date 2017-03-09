@@ -10,7 +10,6 @@ class MovieListsController < ApplicationController
     @new_movie.save
     new_movie_list = MovieList.new(list_id: params[:list_id], movie_id: @new_movie.id)
     new_movie_list.save
-
     if params[:genre_ids]
       params[:genre_ids].each do |g|
         gName = Tmdb::Genre.movie_list.select{|x| x.id == g.to_i}.first.name

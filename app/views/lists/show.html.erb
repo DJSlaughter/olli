@@ -4,11 +4,10 @@
 
 
     <div class="avatar-bordered">
-    <% avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <% avatar_url = @user.facebook_picture_url || "http://placehold.it/50x50" %>
     <%= image_tag avatar_url%></div>
     <div><h1><%= "#{@user.first_name}\'s Top 5 #{@list.name} Films"  %></h1></div>
     <div class="btn navbar-button"><%= link_to "Go to your friend's page", user_path(@user) %></div>
-
 
 
 <!-- card should start here -->
