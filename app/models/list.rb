@@ -10,7 +10,7 @@ class List < ApplicationRecord
   def first_movie_url
     movie = self.movies.first
     if movie.nil?
-      "http://placehold.it/30x30"
+      "http://i.imgur.com/65Rkme6.png"
     else
       movie.poster_url
     end
