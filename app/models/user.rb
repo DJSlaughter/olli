@@ -43,6 +43,18 @@ class User < ApplicationRecord
     return user
   end
 
+  def followees
+    super.uniq
+  end
+
+  def followers
+    super.uniq
+  end
+
+  def profile_picture_url
+    facebook_picture_url || 'http://lorempixel.com/200/200/people/'
+  end
+
   private
 
   def send_welcome_email
