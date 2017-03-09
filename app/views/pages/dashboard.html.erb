@@ -50,6 +50,7 @@
               <p class="text-center"><%= list.name %></p>
             </div>
             <%= link_to "See more", list_path(list.id), class: "btn btn-lg button-hover" %>
+            <%= link_to "Remove list", list_path(list.id), class: "btn btn-lg button-hover", method: :delete %>
 
           </div>
 
