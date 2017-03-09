@@ -16,14 +16,15 @@
   <div class="row">
     <div class="banner-content">
 
+      <form action=<%= root_path %> method="get">
 
-      <form action=<%= root_path %> method="get" class="navbar-wagon-search col-sm-4">
         <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search movie, genre or mood">
+
         <button type="submit" class="btn button-banner">
           <i class="fa fa-search"></i>
         </button>
+        </div>
       </form>
-
 
 
     </div>
@@ -49,9 +50,10 @@
 <% if @list_results.size > 0 %>
 <div class="container">
   <div class="row">
+
+  <div class="search-result-section">
     <h3>Search Results Lists</h3>
-
-
+</div>
     <% @list_results.each do |list|%>
 
 <%= render "shared/list_card", list: list%>
