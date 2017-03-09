@@ -1,18 +1,57 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
 
 <!-- array of user_id's movie lists -->
 <!-- Follow button that will set up followship with current_user -->
 
 
-<div class="avatar-bordered"><%= image_tag "facebook_picture_url"%></div>
-<div><h1><%= "You are looking at #{@user.first_name}"  %></h1></div>
 
-<% if !@following %>
-  <div><%= link_to 'Follow', followships_path(user_id: @user.id), method: 'post'  %></div>
-<% else %>
-  <div><%= link_to 'Unfollow', followships_path(user_id: @user.id), method: 'delete'  %></div>
-<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-5">
+      <div class="text-center padded">
+        <% avatar_url = @user.facebook_picture_url  %>
+        <%= image_tag avatar_url, class: "avatar-bordered" %>
+        <h1><%= "#{@user.first_name}" %></h1>
+          <% if !@following %>
+            <div><%= button_to 'Follow', followships_path(user_id: @user.id), method: 'post' %>
+            </div>
+          <% else %>
+            <div><%= button_to 'Unfollow', followships_path(user_id: @user.id), method: 'delete' %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <h2 style="padding-left: 20px"><%= "#{@user.first_name}'s Lists" %></h2>
+  <div class="row">
+    <% @lists.each do |list| %>
+        <div class="col-xs-12 col-sm-4 col-lg-3">
+          <div class="card">
+            <div class="row">
+             <div class="movies-card">
+                <% list.movies.limit(4).each do|movie| %>
+                <div class="col-xs-6 movies-borders">
+                  <%= image_tag movie.poster_url, class: "movie-poster" %>
+                </div>
+              <% end %>
+              </div>
+              <div class="card-title">
+                <p class="text-center"><%= list.name %></p>
+              </div>
+                <%= link_to "See more", list_path(list.id), class: "btn btn-lg button-hover" %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
 
 
 
