@@ -34,7 +34,7 @@
   color: white;
   margin-bottom: 0;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 42px;
   margin-top: 0;
   padding-top: 5px;
 
@@ -43,7 +43,7 @@
   color: #00a894 ;
   margin-bottom: 0;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 42px;
   margin-top: 0;
   padding-top: 5px;
 
@@ -86,24 +86,10 @@
 
 .banner-content {
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 100px;
-  margin-left: 300px;
-  margin-right: 200px;
 }
 
 .banner-form {
-height: 40px !important;
-
-}
-
-
-.banner-formcontrol {
-
-
-
+  display: flex;
 }
 
 
@@ -125,5 +111,16 @@ height: 40px !important;
   border: lightgray 1px solid;
   margin: 20px;
 
+}
+
+
+.search-result-section {
+  text-align: center;
+  color: #00a894 ;
+  margin-bottom: 0;
+  font-weight: 900;
+  font-size: 42px;
+  margin-top: 40px;
+  padding-top: 5px;
 }
 
