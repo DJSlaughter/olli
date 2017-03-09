@@ -18,15 +18,21 @@
 
         <section class="readme-section" id="avatar">
          <div class="text-center product-header">
-          <p><span>Currated</span> movies listed by friends</p>
+      <p> <%= link_to "New List", new_list_path, class:"navbar-wagon-item navbar-button btn text-center" %>
+      </p>
+          <p><span>My</span> movies lists</p>
         </div>
+
+
+
+
 
         <!-- The next div must be inside of a list of movies lists -->
         <% @lists.each do |list| %>
         <div class="col-xs-12 col-sm-3">
           <div class="card">
 
-            <% avatar_url = list.user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <% avatar_url = list.user.profile_picture_url%>
             <%= image_tag avatar_url, class: "avatar-card-topleft" %>
 
             <div class="row">
@@ -68,8 +74,6 @@
       <!-- button -->
 
 
-      <p> <%= link_to "Create your own List", new_list_path, class:"navbar-wagon-item navbar-button btn" %>
-      </p>
 
   </div>
 
@@ -87,14 +91,16 @@
         </div>
 
         <div class="product">
-            <div class="row">
-                <% current_user.followees.each do|| %>
+          <div class="row">
+            <% current_user.followees.each do |followee| %>
+              <div class="col-sm-2">
+              <%= link_to user_path(followee) do %>
+                <%= render 'shared/user_card', user: followee %>
+              <% end %>
+              </div>
+            <% end %>
 
-                  <%= render 'shared/user_card', user: current_user %>
-
-                <% end %>
-
-            </div>
+          </div>
         </div>
       </div>
   </div>
@@ -107,17 +113,16 @@
         </div>
 
         <div class="product">
-            <div class="row">
-                <% current_user.followers.each do|| %>
+          <div class="row">
+            <% current_user.followers.each do |followers| %>
+              <div class="col-sm-2">
+              <%= link_to user_path(followers) do %>
+                <%= render 'shared/user_card', user: followers %>
+              <% end %>
+              </div>
+            <% end %>
 
-                <div class="avatar-bordered">
-
-                  <%= render 'shared/user_card', user: current_user %>
-                  </div>
-
-                <% end %>
-
-            </div>
+          </div>
         </div>
       </div>
   </div>
