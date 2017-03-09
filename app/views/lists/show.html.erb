@@ -7,7 +7,7 @@
     <% avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
     <%= image_tag avatar_url%></div>
     <div><h1><%= "#{@user.first_name} List"  %></h1></div>
-    <div class="btn navbar-button"><%= link_to "Go to your friend's page", user_path(user_id: @user.id) %></div>
+    <div class="btn navbar-button"><%= link_to "Go to your friend's page", user_path(@user) %></div>
 
 
 
