@@ -4,7 +4,7 @@
 
 
     <div class="avatar-bordered"><%= image_tag @user.facebook_picture_url %></div>
-    <div><h1><%= "#{@user.first_name} List"  %></h1></div>
+    <div><h1><%= @list.name  %></h1></div>
     <div class="btn navbar-button"><%= link_to "Go to your friend's page", user_path(user_id: @user.id) %></div>
 
 

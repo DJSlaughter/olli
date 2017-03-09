@@ -1,7 +1,5 @@
 <!-- banner starting here -->
 
-
-
 <div class="banner" style="background: linear-gradient(-140deg, rgba(2,101,131,-0.4) 0%, rgba(47,34,40,9.6) 89%), url(<%= image_path 'background.jpg'%>); background-position: bottom">
 
 
@@ -17,46 +15,30 @@
   <!-- Search form -->
   <div class="row">
     <div class="banner-content">
-      <div class="col-sm-2">
-
-
-      </div>
 
 
       <form action=<%= root_path %> method="get" class="navbar-wagon-search col-sm-4">
         <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search movie, genre or mood">
-        <button type="submit" class="navbar-wagon-search-btn">
+        <button type="submit" class="btn button-banner">
           <i class="fa fa-search"></i>
         </button>
       </form>
 
 
-      <div class="col-sm-2">
-        <a class="btn button-banner">SEARCH</a>
-      </div>
+
     </div>
   </div>
 </div>
 
-<div class="col-sm-2">
 
-</div>
 
 <% if @movie_results.size > 0 %>
 <div class="container">
   <div class="row">
     <h3>Search Results Movies</h3>
-    <% @movie_results.each do |m|%>
-    <div class="col-xs-12 col-sm-6">
-      <%= m.name %>
-      <%= image_tag m.poster_url %>
-      <%= "List: #{m.lists.name}" %>
-    </div>
+    <% @movie_results.each do |movie|%>
 
-
-<div class="text-center product-header">
-            <p>Curated <span>Lists</span></p>
-          </div>
+<%= render "shared/movie_card_horizontal", movie: movie %>
 
     <% end %>
   </div>
@@ -68,10 +50,12 @@
 <div class="container">
   <div class="row">
     <h3>Search Results Lists</h3>
-    <% @list_results.each do |l|%>
-    <div class="col-xs-12 col-sm-6">
-      <%= l.name %>
-    </div>
+
+
+    <% @list_results.each do |list|%>
+
+<%= render "shared/list_card", list: list%>
+
     <% end %>
   </div>
 </div>
@@ -82,11 +66,10 @@
   <div class="row">
     <h3>Search Results Genres</h3>
     <% @genre_results.each do |g|%>
-    <p><%= g.name %></p>
-    <% g.movies.each do |m| %>
-    <div class="col-xs-12 col-sm-6">
-      <%= m.name %>
-    </div>
+
+
+   <% g.movies.each do |movie| %>
+    <%= render "shared/movie_card_horizontal", movie: movie %>
     <% end %>
     <% end %>
   </div>
@@ -109,3 +92,5 @@
       </div>
     </div>
   </div>
+
+  <!-- banner sentence -->
