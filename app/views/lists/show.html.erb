@@ -4,9 +4,9 @@
 
 
     <div class="avatar-bordered">
-    <% avatar_url = @user.facebook_picture_url || "http://placehold.it/50x50" %>
+    <% avatar_url = @user.facebook_picture_url || 'http://lorempixel.com/200/200/people/' %>
     <%= image_tag avatar_url%></div>
-    <div><h1><%= "#{@user.first_name}\'s Top 5 #{@list.name} Films"  %></h1></div>
+    <div><h1><%= "#{@user.first_name}\'s #{@list.name} Films"  %></h1></div>
     <div><%= link_to "Go to your friend's page", user_path(@user), class: "navbar-wagon-item navbar-button btn text-center" %></div>
 
 

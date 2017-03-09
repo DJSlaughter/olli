@@ -10,6 +10,10 @@ class Movie < ApplicationRecord
   include PgSearch
   multisearchable against: [:name, :overview]
 
+  def poster_url
+    read_attribute(:poster_url) || "http://lorempixel.com/g/360/500/abstract/"
+  end
+
 
   # has_many :users, through: :tags # These relationship not required yet
   # has_many :users, through: :favourites # These relationship not required yet

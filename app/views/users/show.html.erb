@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-2 col-sm-offset-5">
       <div class="text-center padded">
-        <% avatar_url = @user.facebook_picture_url  %>
+        <% avatar_url = @user.profile_picture_url  %>
         <%= image_tag avatar_url, class: "avatar-bordered" %>
         <h1><%= "#{@user.first_name}" %></h1>
           <% if !@following %>
