@@ -7,32 +7,30 @@
   <div class='col-sm-7 movie-card-horizontal'>
     <div class="movie-inline ">
       <h2><%= movie.name %></h2>
-     <p class=""><%= truncate(movie.overview, :ommision => "...Read More", :length => 300) %></p>
-
+      <p class=""><%= truncate(movie.overview, :ommision => "...Read More", :length => 300) %></p>
     </div>
 
   </div>
 
-<% unless current_page?(root_path) %>
+  <% unless current_page?(root_path) %>
   <div class="col-sm-2">
    <ul class="list-inline movie-horizontal-share hidden-sm hidden-xs">
 
-
-    <li><a href="#"><i class="fa fa-share"></i></a></li>
+    <li>
+      <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<%= movie_url(movie.id, only_path: false) %>" target="_blank" onclick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false"><i class="fa fa-share"></i></a>
+    </li>
     <p>Share</p>
 
 
-    <li>
-      <%= link_to list_remove_movie_path(list, movie_id: movie.id), method: :delete do  %>
-
-         <i class="fa fa-trash-o"></i>
+    <li><%= link_to list_remove_movie_path(list, movie_id: movie.id), method: :delete do  %>
+      <i class="fa fa-trash-o"></i>
       <% end %>
-<p>Remove from list</p>
-</li>
+    </li>
+    <p>Remove from list</p>
 
+    </ul>
 
-  </ul>
-</div>
+  </div>
 <% end %>
 </div>
 </div>
