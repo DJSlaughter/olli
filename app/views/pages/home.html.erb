@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="banner-header">
-      <p><span>Currated</span> movies from your <span> close friends</span></p>
+      <p><span>Curated</span> movies from your <span> close friends</span></p>
     </div>
   </div>
 
@@ -16,14 +16,15 @@
   <div class="row">
     <div class="banner-content">
 
+      <form action=<%= root_path %> method="get">
 
-      <form action=<%= root_path %> method="get" class="navbar-wagon-search col-sm-4">
-        <input type="text" name="search_value" class="navbar-wagon-search-input" placeholder="Search movie, genre or mood">
+        <input type="text" name="search_value" class="navbar-wagon-search-input text-left" placeholder="Search movie">
+
         <button type="submit" class="btn button-banner">
           <i class="fa fa-search"></i>
         </button>
+        </div>
       </form>
-
 
 
     </div>
@@ -49,9 +50,10 @@
 <% if @list_results.size > 0 %>
 <div class="container">
   <div class="row">
+
+  <div class="search-result-section">
     <h3>Search Results Lists</h3>
-
-
+</div>
     <% @list_results.each do |list|%>
 
 <%= render "shared/list_card", list: list%>
@@ -88,7 +90,7 @@
   <div class="container">
     <div class="row">
       <div class="text-center product-header">
-        <a href="/lists/new" class=" btn navbar-button">Start creating your list now !</a>
+        <a href="/lists/new" class=" btn navbar-button">Start creating your list now</a>
       </div>
     </div>
   </div>

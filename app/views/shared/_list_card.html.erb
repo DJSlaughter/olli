@@ -4,7 +4,10 @@
  <div class="card-title">
               <p class="text-center"><%= list.name %></p>
             </div>
-            <
+
+            <% avatar_url = list.user.facebook_picture_url || "http://i.imgur.com/huI7yDE.png" %>
+            <%= image_tag avatar_url, class: "avatar-card-topleft" %>
+
             <div class="row">
              <div class="movies-card">
               <% list.movies.limit(4).each do|movie| %>

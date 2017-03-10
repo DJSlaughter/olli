@@ -52,7 +52,7 @@ class User < ApplicationRecord
   end
 
   def profile_picture_url
-    facebook_picture_url || 'http://lorempixel.com/200/200/people/'
+    facebook_picture_url || 'http://i.imgur.com/65Rkme6.png'
   end
 
   private
