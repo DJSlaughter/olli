@@ -60,7 +60,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to current_user.lists
+    redirect_to dashboard_path
   end
 
 

@@ -1,6 +1,6 @@
 class List < ApplicationRecord
   belongs_to :user
-  has_many :movie_lists
+  has_many :movie_lists, dependent: :destroy
   has_many :movies, through: :movie_lists
 
   include PgSearch
@@ -10,7 +10,7 @@ class List < ApplicationRecord
   def first_movie_url
     movie = self.movies.first
     if movie.nil?
-      "http://placehold.it/30x30"
+      "http://i.imgur.com/65Rkme6.png"
     else
       movie.poster_url
     end
