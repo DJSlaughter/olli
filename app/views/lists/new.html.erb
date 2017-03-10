@@ -1,17 +1,26 @@
+
+<body>
+
+<div class="background-signup" style="background: url(<%= image_path 'background-movies.png'%>)">
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center margin50top">
-      <div class="form-card">
-        <h1>Create a list</h1>
-        <p>Put together a list that you can share with your friends.</p>
-          <%= simple_form_for [@list] do |f| %>
-            <%= f.input :name, label: 'What do you want to call your list?', placeholder: 'Top 5 Movies' %>
 
-           <%= f.button :submit, "Create list", class:"btn btn-success btn-lg width50 text-center" %>
-          <% end %>
+    <div class="sign-up-card">
+
+      <div class="form-card">
+        <h2><span>Create</span> a list</h2>
+        <hr>
+        <p>What do you want to call your list ?</p>
+        <hr>
+        <%= simple_form_for [@list] do |f| %>
+        <%= f.input :name, class: "login-field", label: false, placeholder: 'Top 5 Movies', class: "width50" %>
+        <%= f.button :submit, "Create list", class:"btn btn-success btn-lg width50 text-center" %>
+        <% end %>
       </div>
     </div>
   </div>
+
 </div>
 
-
+</body>
