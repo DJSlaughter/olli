@@ -8,6 +8,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @movie = Movie.new
     @user = @list.user #new user
+    @movie_fb = Movie.find(params[:id])
 
   end
 
