@@ -7,16 +7,16 @@
  .card {
   align-items: center;
   text-align: center;
-  height: 420px;
+  height: 470px;
   width: 100%;
   border-radius: 3px;
   transition: all 0.15s ease;
   // border: 1px solid #ccc;
   padding:0 30px 0 30px;
   -webkit-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
--moz-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
-margin-bottom: 50px;
+  -moz-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  margin-bottom: 50px;
 }
 .card p{
   color: #999999;
@@ -118,6 +118,9 @@ margin-bottom: 50px;
   transition: all 0.15s ease;
   border: 1px solid #ccc;
   margin: 30px;
+  -webkit-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
 }
 
 
@@ -190,12 +193,13 @@ margin-bottom: 50px;
 // follow-section
 
 .follow-section {
-margin-top: 40;
-margin: 0 -200px;
- -webkit-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
--moz-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
-margin-bottom: 50px;
+  margin-top: 40;
+  margin: 0 -200px;
+  -webkit-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  box-shadow: 0px 3px 23px -8px rgba(0,0,0,0.47);
+  margin-bottom: 50px;
+
 }
 
 
